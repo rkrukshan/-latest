@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/RK.png";
 import {
-  FaFacebook,
   FaGit,
   FaLinkedin,
   FaMediumM,
@@ -10,6 +9,9 @@ import {
 } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import { GiMailbox } from "react-icons/gi";
+import { BiMailSend } from "react-icons/bi";
+import { SiGmail, SiWhatsapp } from "react-icons/si";
 
 const spinVariant = {
   animate: {
@@ -30,7 +32,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="m-8 flex md:flex-row  items-center justify-center gap-5 text-2xl">
-        <motion.a
+        <motion.a 
           variants={spinVariant}
           animate="animate"
           href="http://www.linkedin.com/in/rukmanghan-selvakumar"
@@ -38,9 +40,9 @@ export default function Navbar() {
           rel="noopener noreferrer"
           aria-label="LinkedIn"
         >
-          <FaLinkedin />
+          <FaLinkedin className="rounded-lg" />
         </motion.a>
-        <motion.a
+        <motion.a 
           variants={spinVariant}
           animate="animate"
           href="https://github.com/rkrukshan"
@@ -63,15 +65,15 @@ export default function Navbar() {
         </motion.a>
 
         <motion.a
-          variants={spinVariant}
-          animate="animate"
-          href="https://web.facebook.com/Ruckshan.Rukmanghan/"
-          target="blank"
-          rel="noopener noreferrer"
-          aria-label="facebook"
-        >
-          <FaFacebook />
-        </motion.a>
+  variants={spinVariant}
+  animate="animate"
+  href="https://wa.me/+94769861092?text=Hello,%20I%20need%20assistance"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="WhatsApp"
+>
+  <SiWhatsapp/> 
+</motion.a>
       </div>
     </nav>
   );
