@@ -8,6 +8,33 @@ export const HERO_CONTENT = `Hi, I'm Rukmanghan Selvakumar, a BIT (Bachelor of I
 
 export const ABOUT_TEXT = `I am proficient in various programming tools and technologies, with extensive experience in web development. I possess a broad understanding of software development concepts and best practices and am dedicated to staying current with the latest industry trends and technologies. I actively seek new technologies and continually explore ways to scale my skills and knowledge to drive innovation and excellence in the industry.`;
 
+export const EXPERIENCES = [
+  {
+    year: "2025 - March to 2025 - September",
+    role: "Intern Software Engineer (On Site)",
+    company: "Gray Corp.",
+    description: `Worked as an Intern Software Engineer, contributing to the development and maintenance of web applications using React.js, Tailwind CSS, and Redux. Integrated backend services with Firebase and utilized Axios for handling API requests. Used Postman for testing RESTful APIs and contributed to content management using WordPress. Collaborated with stakeholders to gather requirements, define project timelines, and deliver scalable solutions.`,
+    technologies: [
+      "Javascript",
+      "React.js",
+      "Tailwind CSS",
+      "Redux",
+      , "GIT",
+      "Firebase",
+      "Axios",
+      "Postman",
+      "WordPress",
+    ],
+  },
+  {
+    year: "2023 - Augest to 2025 - may",
+    role: "Graphic Designer (Remote)",
+    company: "Pix Graphics and Signs.",
+    description: `Worked as a Graphic Designer, creating visually engaging digital assets using Adobe Photoshop and Adobe Illustrator. Designed marketing materials, social media graphics, and brand elements aligned with project requirements and brand guidelines. Collaborated with clients and team members to understand design objectives, meet deadlines, and deliver high-quality creative solutions.`,
+    technologies: ["PhotoShop","Illustrator"],
+  },
+];
+
 export const PROJECTS = [
   {
     title: "MobStore",
