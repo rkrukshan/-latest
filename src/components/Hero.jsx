@@ -53,7 +53,7 @@ export default function Hero() {
             <p className="text-sm my-2 max-w-lg py-6 md:text-2xl text-justify leading-relaxed tracking-tighter">
               {HERO_CONTENT}
             </p>
-            <motion.a
+            {/* <motion.a
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 100 }}
               transition={{ duration: 1.5 }}
@@ -64,7 +64,7 @@ export default function Hero() {
               className="bg-white rounded-full p-4 text-sm text-stone-800 mb-10"
             >
               Download Resume
-            </motion.a>
+            </motion.a> */}
           </div>
         </motion.div>
       </div>

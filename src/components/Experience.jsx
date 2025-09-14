@@ -20,7 +20,7 @@ export default function Experience() {
                 transition={{ duration: 1.5 }}
                 className="text-3xl sm:text-4xl text-white text-center my-12 sm:my-20"
             >
-                Experience
+                Experiences
             </motion.h2>
 
             <div className="w-full max-w-4xl mx-auto">
@@ -34,7 +34,7 @@ export default function Experience() {
                             whileInView="visible"
                             viewport={{ once: true, margin: "-20%" }}
                             variants={textVariants}
-                            className="w-full max-w-xl mx-auto px-4 sm:px-0 md:flex-col items-center justify-center lg:px-0 lg:w-auto"
+                            className="w-full max-w-xl mx-auto px-4 sm:px-0 md:flex-col items-center justify-center lg:px-0 lg:w-aut"
                         >
                             <div className="mb-3 text-center sm:text-center">
                                 <h3 className="text-xl sm:text-2xl font-semibold text-white">
@@ -44,7 +44,7 @@ export default function Experience() {
                                 <p className="text-sm text-stone-500">{exp.year}</p>
                             </div>
 
-                            <p className="mb-4 text-stone-400 sm:text-justify">
+                            <p className="text-sm my-2 w-auto py-6 md:text-2xl text-justify leading-relaxed tracking-tighter">
                                 {exp.description}
                             </p>
 

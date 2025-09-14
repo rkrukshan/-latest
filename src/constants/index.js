@@ -13,7 +13,7 @@ export const EXPERIENCES = [
     year: "2025 - March to 2025 - September",
     role: "Intern Software Engineer (On Site)",
     company: "Gray Corp.",
-    description: `Worked as an Intern Software Engineer, contributing to the development and maintenance of web applications using React.js, Tailwind CSS, and Redux. Integrated backend services with Firebase and utilized Axios for handling API requests. Used Postman for testing RESTful APIs and contributed to content management using WordPress. Collaborated with stakeholders to gather requirements, define project timelines, and deliver scalable solutions.`,
+    description: `Worked as an Intern Software Engineer, contributing to the development and maintenance of web applications using React.js, Tailwind CSS, and Redux. Integrated backend services with Firebase and utilized Axios for handling API requests. Used Postman for testing RESTful APIs and contributed to content management using WordPress. Collaborated with Team Members to gather requirements, define project timelines, and deliver scalable solutions.`,
     technologies: [
       "Javascript",
       "React.js",
@@ -30,7 +30,7 @@ export const EXPERIENCES = [
     year: "2023 - Augest to 2025 - may",
     role: "Graphic Designer (Remote)",
     company: "Pix Graphics and Signs.",
-    description: `Worked as a Graphic Designer, creating visually engaging digital assets using Adobe Photoshop and Adobe Illustrator. Designed marketing materials, social media graphics, and brand elements aligned with project requirements and brand guidelines. Collaborated with clients and team members to understand design objectives, meet deadlines, and deliver high-quality creative solutions.`,
+    description: `Worked as a Graphic Designer, creating visually engaging digital assets using Adobe Photoshop and Adobe Illustrator. Designed marketing materials, social media graphics, and brand elements in line with project requirements and brand guidelines. Managed all tasks independently as a remote worker, ensuring design objectives were met, deadlines were respected, and high-quality creative solutions were delivered.`,
     technologies: ["PhotoShop","Illustrator"],
   },
 ];
