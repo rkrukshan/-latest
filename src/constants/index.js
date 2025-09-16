@@ -3,6 +3,7 @@ import project2 from "../assets/projects/project-2.webp";
 import project3 from "../assets/projects/project-3.webp";
 import project4 from "../assets/projects/project-4.webp";
 import project5 from "../assets/projects/project-5.webp";
+import project6 from "../assets/projects/project-6.webp";
 
 export const HERO_CONTENT = `Hi, I'm Rukmanghan Selvakumar, a BIT (Bachelor of Information Technology) graduate with a deep passion for coding and a demonstrated ability to rapidly master new programming tools and technologies. My enthusiasm for technology fuels my drive to develop innovative solutions using advanced coding techniques. I am dedicated to creating cutting-edge software that optimizes systems and sets new industry benchmarks.`;
 
@@ -19,7 +20,8 @@ export const EXPERIENCES = [
       "React.js",
       "Tailwind CSS",
       "Redux",
-      , "GIT",
+      ,
+      "GIT",
       "Firebase",
       "Axios",
       "Postman",
@@ -31,11 +33,25 @@ export const EXPERIENCES = [
     role: "Graphic Designer (Remote)",
     company: "Pix Graphics and Signs.",
     description: `Worked as a Graphic Designer, creating visually engaging digital assets using Adobe Photoshop and Adobe Illustrator. Designed marketing materials, social media graphics, and brand elements in line with project requirements and brand guidelines. Managed all tasks independently as a remote worker, ensuring design objectives were met, deadlines were respected, and high-quality creative solutions were delivered.`,
-    technologies: ["PhotoShop","Illustrator"],
+    technologies: ["PhotoShop", "Illustrator"],
   },
 ];
 
 export const PROJECTS = [
+  {
+    title: "Country Explorer",
+    image: project6,
+    description:
+      "Country Explorer is a responsive web app built with React, React Router V7, React Icons, Axios and Tailwind CSS that lets users explore country data via the REST Countries API, including population, capital, region, languages, and flags.",
+    technologies: [
+      "React",
+      "React Router V7",
+      "React Icons",
+      "Axios",
+      "Tailwind",
+    ],
+    link: "https://github.com/rkrukshan/CountryExplorer.git",
+  },
   {
     title: "MobStore",
     image: project2,
@@ -54,10 +70,10 @@ export const PROJECTS = [
     link: "https://github.com/rkrukshan/react-image-gallery.git",
   },
   {
-    title: "Grosery Shop",
+    title: "Grocery Shop",
     image: project4,
     description:
-      "A platform for Listing and Showcase Grosery products using React ,Tailwind, Redux, Material UI, Framer Motion.",
+      "A platform for Listing and Showcase Grocery products using React ,Tailwind, Redux, Material UI, Framer Motion.",
     technologies: ["React", "Tailwind", "Redux", "MUI", "Framer Motion"],
     link: "https://github.com/rkrukshan/Grocery-Shop/tree/master",
   },
@@ -70,7 +86,7 @@ export const PROJECTS = [
     link: "https://github.com/rkrukshan/Interior_Design_Management_System.git",
   },
   {
-    title: "SpringBoot CRUD With , Mysql and Tailwind",
+    title: "SpringBoot CRUD",
     image: project5,
     description:
       "A SpringBoot application that implements CRUD operations with a ThymeLeaf frontend styled using Tailwind CSS.",

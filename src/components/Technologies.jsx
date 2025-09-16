@@ -4,7 +4,7 @@ import { BsBootstrap } from "react-icons/bs";
 import { DiIllustrator, DiJava, DiMongodb, DiMysql, DiPhotoshop, DiPhp, DiSqllite } from "react-icons/di";
 import { GrGithub, GrMysql } from "react-icons/gr";
 import { RiNextjsLine, RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
-import { SiAxios, SiMysql, SiN8N, SiPostman, SiRedux, SiSpringboot, SiSqlite } from "react-icons/si";
+import { SiAxios, SiInsomnia, SiMysql, SiN8N, SiPostman, SiReactrouter, SiRedux, SiSpringboot, SiSqlite } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
 const iconVariants = (duration) => ({
@@ -39,19 +39,14 @@ export default function Technologies() {
         className="flex flex-wrap lg:flex-row items-center justify-center gap-4"
       >
 
-        
-
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(2.5)}
+          variants={iconVariants(2)}
           className="p-4"
         >
           <RiReactjsLine className="text-7xl text-[#00a7e5] h-29 w-29" />
         </motion.div>
-
-
-
 
         <motion.div
           initial="initial"
@@ -68,13 +63,13 @@ export default function Technologies() {
           variants={iconVariants(5)}
           className="p-4"
         >
-          <DiMysql className="text-7xl text-blue-300 h-29 w-29" />
+          <SiReactrouter className="text-7xl text-[#D0021B] h-29 w-29" />
         </motion.div>
 
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(3)}
+          variants={iconVariants(2.5)}
           className="p-4"
         >
           <RiNextjsLine className="text-7xl text-[#C0C0C0] h-29 w-29" />
@@ -83,65 +78,17 @@ export default function Technologies() {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(2)}
+          variants={iconVariants(3)}
 
           className="p-4"
         >
           <SiRedux className="text-7xl text-[#764abc] h-29 w-29" />
         </motion.div>
 
-
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={iconVariants(2.5)}
-          className="p-4"
-        >
-          <TbBrandFramerMotion className="text-7xl text-white h-29 w-29" />
-        </motion.div>
-
-
         <motion.div
           initial="initial"
           animate="animate"
           variants={iconVariants(5)}
-          className="p-4"
-        >
-          <DiJava className="text-7xl text-[#5382a1] h-29 w-29" />
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={iconVariants(3)}
-          className="p-4"
-        >
-          <SiSpringboot className="text-7xl text-[#6DB33F] h-29 w-29" />
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={iconVariants(3)}
-          className="p-4"
-        >
-          <GrGithub className="text-7xl text-white h-29 w-29" />
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={iconVariants(5)}
-          className="p-4"
-        >
-          <DiPhp className="text-7xl text-white h-29 w-29" />
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={iconVariants(2.5)}
           className="p-4"
         >
           <SiAxios className="text-7xl text-blue-900 h-29 w-29" />
@@ -153,23 +100,82 @@ export default function Technologies() {
           variants={iconVariants(5)}
           className="p-4"
         >
+          <TbBrandFramerMotion className="text-7xl text-white h-29 w-29" />
+        </motion.div>
+
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(2)}
+          className="p-4"
+        >
+          <DiMysql className="text-7xl text-blue-300 h-29 w-29" />
+        </motion.div>
+
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(3)}
+          className="p-4"
+        >
+          <DiPhp className="text-7xl text-white h-29 w-29" />
+        </motion.div>
+
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(3)}
+          className="p-4"
+        >
+          <DiJava className="text-7xl text-[#5382a1] h-29 w-29" />
+        </motion.div>
+
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(5)}
+          className="p-4"
+        >
+          <SiSpringboot className="text-7xl text-[#6DB33F] h-29 w-29" />
+        </motion.div>
+
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(2.5)}
+          className="p-4"
+        >
+          <GrGithub className="text-7xl text-white h-29 w-29" />
+        </motion.div>
+
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(2)}
+          className="p-4"
+        >
           <SiPostman className="text-7xl text-[#EF5B25] bg-white rounded-[50%] h-29 w-29" />
         </motion.div>
 
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(3)}
+          className="p-4"
+        >
+          <SiInsomnia className="text-7xl text-[#4000BF] bg-white rounded-[50%] h-29 w-29" />
+        </motion.div>
 
         {/* <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(3)}
+          variants={iconVariants(5)}
           className="p-4"
         >
           <SiN8N className="text-7xl text-[#fd0037] h-29 w-29" />
         </motion.div> */}
 
       </motion.div>
-
-
-      
     </div>
   );
 }
