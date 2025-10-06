@@ -6,3 +6,16 @@
   font-family: "Inter", sans-serif;
   background: #000000;
 }
+
+@theme{
+  --color-primary:#757F9A;
+  --color-secondary:#2A6A99;
+}
+
+.git {
+  @apply bg-gradient-to-r from-slate-500/90 to-gray-950/15;
+}
+
+.livedemo {
+  @apply bg-gradient-to-r from-gray-500/55 to-blue-950;
+}

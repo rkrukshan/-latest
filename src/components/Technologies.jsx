@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { BsBootstrap } from "react-icons/bs";
-import { DiIllustrator, DiJava, DiMongodb, DiMysql, DiPhotoshop, DiPhp, DiSqllite } from "react-icons/di";
-import { GrGithub, GrMysql } from "react-icons/gr";
+import { DiDotnet, DiJava, DiMysql, DiPhp } from "react-icons/di";
+import { GrGithub } from "react-icons/gr";
 import { RiNextjsLine, RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
-import { SiAxios, SiInsomnia, SiMysql, SiN8N, SiPostman, SiReactrouter, SiRedux, SiSpringboot, SiSqlite } from "react-icons/si";
-import { TbBrandFramerMotion } from "react-icons/tb";
+import { SiAxios, SiFramer, SiInsomnia, SiN8N, SiPostman, SiReactrouter, SiRedux, SiSpringboot } from "react-icons/si";
 
 const iconVariants = (duration) => ({
   initial: { y: -10 },
@@ -100,7 +99,16 @@ export default function Technologies() {
           variants={iconVariants(5)}
           className="p-4"
         >
-          <TbBrandFramerMotion className="text-7xl text-white h-29 w-29" />
+          <SiFramer className="text-7xl text-blue-400 h-29 w-29" />
+        </motion.div>
+
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(5)}
+          className="p-4"
+        >
+          <BsBootstrap className="text-7xl text-[#602C50] h-29 w-29" />
         </motion.div>
 
         <motion.div
@@ -139,6 +147,16 @@ export default function Technologies() {
           <SiSpringboot className="text-7xl text-[#6DB33F] h-29 w-29" />
         </motion.div>
 
+
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(3)}
+          className="p-4"
+        >
+          <DiDotnet className="text-7xl text-[#2988dc] h-29 w-29" />
+        </motion.div>
+
         <motion.div
           initial="initial"
           animate="animate"
@@ -165,6 +183,9 @@ export default function Technologies() {
         >
           <SiInsomnia className="text-7xl text-[#4000BF] bg-white rounded-[50%] h-29 w-29" />
         </motion.div>
+
+
+
 
         {/* <motion.div
           initial="initial"

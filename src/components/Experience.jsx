@@ -49,11 +49,12 @@ export default function Experience() {
                             </p>
 
                             <div className="flex flex-wrap justify-center lg:justify-start gap-2">
-                                {exp.technologies.map((tech, idx) => (
+                                {exp.technologies.map((tech, i) => (
                                     <span
-                                        key={idx}
-                                        className="rounded bg-stone-900 px-3 py-1 text-sm font-medium text-stone-300"
-                                    >
+                                        className="flex items-center gap-2 rounded bg-stone-900 px-3 py-1 text-sm font-medium text-stone-300"
+                                        key={i}>
+
+                                        {exp.techlogo[i] && React.createElement(exp.techlogo[i])}
                                         {tech}
                                     </span>
                                 ))}
