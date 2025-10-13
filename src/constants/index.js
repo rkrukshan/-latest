@@ -6,7 +6,13 @@ import project4 from "../assets/projects/project-4.webp";
 import project5 from "../assets/projects/project-5.webp";
 import project6 from "../assets/projects/project-6.webp";
 import project7 from "../assets/projects/project-7.webp";
-import { FaCss3Alt, FaGitAlt, FaPooStorm, FaSquareJs, FaWordpress } from "react-icons/fa6";
+import {
+  FaCss3Alt,
+  FaGitAlt,
+  FaPooStorm,
+  FaSquareJs,
+  FaWordpress,
+} from "react-icons/fa6";
 import {
   SiAdobeillustrator,
   SiAdobephotoshop,
@@ -14,6 +20,7 @@ import {
   SiFirebase,
   SiFramer,
   SiGithub,
+  SiInsomnia,
   SiMui,
   SiPhp,
   SiPostman,
@@ -44,20 +51,36 @@ export const EXPERIENCES = [
       "GIT",
       "Firebase",
       "Axios",
+      "MUI",
       "Postman",
+      "Insomnia",
       "WordPress",
     ],
-    techlogo :[
-  FaJsSquare,
-  FaReact,
-  SiTailwindcss,
-  SiRedux,
-  SiGithub ,
-  SiFirebase,
-  SiAxios,
-  SiPostman,
-  FaWordpress,
-],
+    techlogo: [
+      FaJsSquare,
+      FaReact,
+      SiTailwindcss,
+      SiRedux,
+      SiGithub,
+      SiFirebase,
+      SiAxios,
+      SiMui,
+      SiPostman,
+      SiInsomnia,
+      FaWordpress,
+    ],
+    // techcolor: [
+    //   "logo-js",
+    //   "logo-react",
+    //   "logo-tailwind",
+    //   "logo-redux",
+    //   "logo-github",
+    //   "logo-firebase",
+    //   "logo-axios",
+    //   "logo-mui",
+    //   "logo-postman",
+    //   "logo-wordpress",
+    // ],
   },
   {
     year: "2023 - Augest to 2025 - may",
@@ -65,7 +88,8 @@ export const EXPERIENCES = [
     company: "Pix Graphics and Signs.",
     description: `Worked as a Graphic Designer, creating visually engaging digital assets using Adobe Photoshop and Adobe Illustrator. Designed marketing materials, social media graphics, and brand elements in line with project requirements and brand guidelines. Managed all tasks independently as a remote worker, ensuring design objectives were met, deadlines were respected, and high-quality creative solutions were delivered.`,
     technologies: ["PhotoShop", "Illustrator"],
-    techlogo:[SiAdobephotoshop,SiAdobeillustrator  ]
+    techlogo: [SiAdobephotoshop, SiAdobeillustrator],
+    // techcolor: ["logo-photoshop", "logo-illustrator"],
   },
 ];
 
@@ -84,7 +108,7 @@ export const PROJECTS = [
     title: "Country Explorer",
     image: project6,
     description:
-      "Country Explorer is a responsive web app built with React, React Router V7, React Icons, Axios and Tailwind CSS that lets users explore country data via the REST Countries API, including population, capital, region, languages, and flags.",
+      "Country Explorer is a responsive React web app using React Router, Axios, and Tailwind CSS to display country details like population, capital, region, languages, and flags.",
     technologies: [
       "React",
       "React Router V7",

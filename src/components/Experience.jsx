@@ -48,10 +48,10 @@ export default function Experience() {
                                 {exp.description}
                             </p>
 
-                            <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+                            <div className="flex flex-wrap justify-center items-center lg:justify-center gap-2">
                                 {exp.technologies.map((tech, i) => (
                                     <span
-                                        className="flex items-center gap-2 rounded bg-stone-900 px-3 py-1 text-sm font-medium text-stone-300"
+                                        className="flex items-center gap-2 rounded-sm bg-stone-900/80 px-3 py-1.5 text-sm font-medium text-stone-200 shadow-sm hover:bg-stone-800 transition cursor-default"
                                         key={i}>
 
                                         {exp.techlogo[i] && React.createElement(exp.techlogo[i])}

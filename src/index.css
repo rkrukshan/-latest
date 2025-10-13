@@ -7,9 +7,9 @@
   background: #000000;
 }
 
-@theme{
-  --color-primary:#757F9A;
-  --color-secondary:#2A6A99;
+@theme {
+  --color-primary: #757f9a;
+  --color-secondary: #2a6a99;
 }
 
 .git {
@@ -18,4 +18,107 @@
 
 .livedemo {
   @apply bg-gradient-to-r from-gray-500/55 to-blue-950;
+}
+
+.logo-html {
+  @apply text-[#E34F26];
+}
+
+.logo-css {
+  @apply text-[#1572B6];
+}
+
+.logo-js {
+  @apply text-[#F7DF1E];
+}
+
+.logo-thymeleaf {
+  @apply text-[#005F0F];
+}
+
+.logo-react {
+  @apply text-[#00a7e5];
+}
+
+.logo-tailwind {
+  @apply text-[#06B6D4];
+}
+
+.logo-reactrouterv7 {
+  @apply text-[#D0021B];
+}
+
+.logo-nextjs {
+  @apply text-[#C0C0C0];
+}
+
+.logo-redux {
+  @apply text-[#764abc];
+}
+
+.logo-axios {
+  @apply text-blue-900;
+}
+
+.logo-mui {
+  @apply text-[#2196f3];
+}
+
+.logo-framer {
+  @apply text-blue-400;
+}
+
+.logo-bootstrap {
+  @apply text-[#602C50];
+}
+
+.logo-java {
+  @apply text-[#5382a1];
+}
+
+.logo-spring {
+  @apply text-[#6DB33F];
+}
+
+.logo-dotnet {
+  @apply text-[#2988dc];
+}
+
+.logo-mysql {
+  @apply text-blue-300;
+}
+
+.logo-php {
+  @apply text-white;
+}
+
+.logo-firebase {
+  @apply text-[#FFCA28];
+}
+
+.logo-github {
+  @apply text-white;
+}
+
+.logo-postman {
+  @apply text-[#EF5B25] bg-white rounded-[50%];
+}
+
+.logo-insomnia {
+  @apply text-[#4000BF] bg-white rounded-[50%];
+}
+
+.logo-wordpress {
+  @apply text-[#21759B];
+}
+
+.logo-photoshop {
+  @apply text-[#31A8FF];
+}
+
+.logo-illustrator {
+  @apply text-[#FF9A00];
+}
+.defaulttechcolor {
+  @apply text-white;
 }

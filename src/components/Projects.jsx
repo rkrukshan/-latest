@@ -28,7 +28,7 @@ export default function Projects() {
             key={i}
             className="mb-12 flex flex-col lg:flex-row flex-wrap justify-center lg:justify-start"
           >
-            <div className="flex flex-col flex-wrap justify-center items-center w-full lg:w-1/4">
+            <div className="flex flex-col flex-wrap justify-center items-center w-full lg:w-1/3">
               <motion.img
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -101,17 +101,25 @@ export default function Projects() {
               <p className="mb-4 text-stone-400 text-justify lg:text-start xs:tracking-tighter">
                 {project.description}
               </p>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-2">
-                {project.technologies.map((tech, i) => (
-                  <span
-                    className="flex items-center gap-2 rounded bg-stone-900 px-3 py-1 text-sm font-medium text-stone-300"
-                    key={i}>
-                    
-                    {project.techlogo[i] && React.createElement(project.techlogo[i])}
-                    {tech}
-                  </span>
-                ))}
-              </div>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+  {project.technologies.map((tech, i) => (
+    <div
+      key={i}
+      className="flex items-center gap-2 rounded-sm bg-stone-900/80 px-3 py-1.5 text-sm font-medium text-stone-200 shadow-sm hover:bg-stone-800 transition cursor-default"
+    >
+      {/* Logo */}
+      {project.techlogo[i] && (
+        <div className="flex items-center justify-center w-5 h-5">
+          {React.createElement(project.techlogo[i], { className: "w-5 h-5" })}
+        </div>
+      )}
+
+      {/* Text */}
+      <span className="whitespace-nowrap">{tech}</span>
+    </div>
+  ))}
+</div>
+
 
             </motion.div>
           </div>

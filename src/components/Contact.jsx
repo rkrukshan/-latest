@@ -23,7 +23,7 @@ const textVariants1 = {
 
 
   const textVariants2 = {
-    hidden: { opacity: 0.25, x: -100 },
+    hidden: { opacity: 0.25, x: 100 },
     visible: {
       opacity: 1,
       x: 0,
