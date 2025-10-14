@@ -141,9 +141,22 @@ export default function Form() {
                 </form>
 
                 {/* Status Message */}
-                <div className="text-center mt-6 text-stone-400 text-sm sm:text-base">
-                    {result && <motion.p>{result}</motion.p>}
+                <div className="text-center mt-8">
+                    {result && (
+                        <motion.p
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className={`inline-block px-5 py-2 rounded-lg text-sm sm:text-base font-medium tracking-wide transition-all duration-300 
+        ${result.includes("Successfully")
+                                    ? "bg-gradient-to-r from-green-500/20 to-green-700/20 text-green-400 border border-green-700/40"
+                                    : "bg-gradient-to-r from-red-500/20 to-red-700/20 text-red-400 border border-red-700/40"
+                                }`}
+                        >
+                            {result}
+                        </motion.p>
+                    )}
                 </div>
+
             </motion.div>
         </div>
     );
