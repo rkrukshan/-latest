@@ -22,7 +22,7 @@ export default function App() {
         <Technologies />
         <Projects />
         <Experience />
-        <Form />
+        {/* <Form /> */}
         <Contact />
 
       </div>

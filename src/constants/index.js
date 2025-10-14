@@ -131,7 +131,7 @@ export const PROJECTS = [
     techlogo: [FaReact, SiTailwindcss],
 
     link: "https://github.com/rkrukshan/MobStore.git",
-    livedemolink: "https://mobstoreweb.netlify.app/",
+    livedemolink: "https://mob-store-zeta.vercel.app/",
   },
 
   {
