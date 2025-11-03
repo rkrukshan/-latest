@@ -1,4 +1,4 @@
-import { DiCss3, DiGithub, DiHtml5, DiMysql } from "react-icons/di";
+import { DiCss3, DiDocker, DiGithub, DiHtml5, DiMysql, DiRedis } from "react-icons/di";
 import project1 from "../assets/projects/project-1.webp";
 import project2 from "../assets/projects/project-2.webp";
 import project3 from "../assets/projects/project-3.webp";
@@ -6,6 +6,7 @@ import project4 from "../assets/projects/project-4.webp";
 import project5 from "../assets/projects/project-5.webp";
 import project6 from "../assets/projects/project-6.webp";
 import project7 from "../assets/projects/project-7.webp";
+import project8 from "../assets/projects/project-8.webp";
 import {
   FaCss3Alt,
   FaGitAlt,
@@ -32,6 +33,8 @@ import {
 } from "react-icons/si";
 import { FaJsSquare, FaReact } from "react-icons/fa";
 import { RiReactjsLine } from "react-icons/ri";
+import WebsocketIcon from "../components/icons/WebsocketIcon";
+import { GiDragonfly } from "react-icons/gi";
 
 export const HERO_CONTENT = `Hi, I'm Rukmanghan Selvakumar, a BIT (Bachelor of Information Technology) graduate with a deep passion for coding and a demonstrated ability to rapidly master new programming tools and technologies. My enthusiasm for technology fuels my drive to develop innovative solutions using advanced coding techniques. I am dedicated to creating cutting-edge software that optimizes systems and sets new industry benchmarks.`;
 
@@ -175,6 +178,17 @@ export const PROJECTS = [
     techlogo: [SiSpringboot, SiThymeleaf, DiMysql, SiTailwindcss],
 
     link: "https://github.com/rkrukshan/SpringBoot-CRUD-with-Thymeleaf-Tailwind.git",
+    livedemolink: "",
+  },
+  {
+    title: "chatapplication",
+    image: project8,
+    description:
+      "A scalable real-time chat app using Spring Boot, ThymeLeaf, Tailwind, Docker, WebSocket, and Redis (DragonflyDB) for distributed messaging and seamless multi-instance communication.",
+    technologies: ["SpringBoot", "ThymeLeaf","Websocket","Redis","Docker","Dragonfly DB", "Tailwind"],
+    techlogo: [SiSpringboot,SiThymeleaf, WebsocketIcon,DiRedis,DiDocker,GiDragonfly,SiTailwindcss],
+
+    link: "https://github.com/rkrukshan/chatapplication.git",
     livedemolink: "",
   },
 ];
