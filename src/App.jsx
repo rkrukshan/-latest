@@ -4,7 +4,7 @@ import Hero from "./components/Hero";
 import Technologies from "./components/Technologies";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
-import Form from "./components/Form"; // Fixed import case
+import Form from "./components/Form"; 
 import Contact from "./components/Contact";
 
 export default function App() {

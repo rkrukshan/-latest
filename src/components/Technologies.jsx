@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { BsBootstrap } from "react-icons/bs";
-import { DiDotnet, DiJava, DiMysql, DiPhp } from "react-icons/di";
+import { DiBitbucket, DiDocker, DiDotnet, DiJava, DiMysql, DiPhp } from "react-icons/di";
 import { GrGithub } from "react-icons/gr";
 import { RiNextjsLine, RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { SiAxios, SiFramer, SiInsomnia, SiMui, SiN8N, SiPostman, SiReactrouter, SiRedux, SiSpringboot } from "react-icons/si";
@@ -50,7 +50,7 @@ export default function Technologies() {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(3)}
+          variants={iconVariants(2.5)}
           className="p-4"
         >
           <RiTailwindCssFill className="text-7xl text-[#06B6D4] h-29 w-29" />
@@ -59,7 +59,7 @@ export default function Technologies() {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(5)}
+          variants={iconVariants(2)}
           className="p-4"
         >
           <SiReactrouter className="text-7xl text-[#D0021B] h-29 w-29" />
@@ -77,7 +77,7 @@ export default function Technologies() {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(3)}
+          variants={iconVariants(2)}
 
           className="p-4"
         >
@@ -87,7 +87,7 @@ export default function Technologies() {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(5)}
+          variants={iconVariants(2.5)}
           className="p-4"
         >
           <SiAxios className="text-7xl text-blue-900 h-29 w-29" />
@@ -96,7 +96,7 @@ export default function Technologies() {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(5)}
+          variants={iconVariants(2)}
           className="p-4"
         >
           <SiMui className="text-7xl text-[#2196f3] h-29 w-29" />
@@ -105,7 +105,7 @@ export default function Technologies() {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(5)}
+          variants={iconVariants(2.5)}
           className="p-4"
         >
           <SiFramer className="text-7xl text-blue-400 h-29 w-29" />
@@ -114,7 +114,7 @@ export default function Technologies() {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(5)}
+          variants={iconVariants(2)}
           className="p-4"
         >
           <BsBootstrap className="text-7xl text-[#602C50] h-29 w-29" />
@@ -123,25 +123,7 @@ export default function Technologies() {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(2)}
-          className="p-4"
-        >
-          <DiMysql className="text-7xl text-blue-300 h-29 w-29" />
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={iconVariants(3)}
-          className="p-4"
-        >
-          <DiPhp className="text-7xl text-white h-29 w-29" />
-        </motion.div>
-
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={iconVariants(3)}
+          variants={iconVariants(2.5)}
           className="p-4"
         >
           <DiJava className="text-7xl text-[#5382a1] h-29 w-29" />
@@ -150,21 +132,32 @@ export default function Technologies() {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(5)}
+          variants={iconVariants(2)}
           className="p-4"
         >
           <SiSpringboot className="text-7xl text-[#6DB33F] h-29 w-29" />
         </motion.div>
 
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(2.5)}
+          className="p-4"
+        >
+          <DiMysql className="text-7xl text-blue-300 h-29 w-29" />
+        </motion.div>
 
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(3)}
+          variants={iconVariants(2)}
           className="p-4"
         >
-          <DiDotnet className="text-7xl text-[#2988dc] h-29 w-29" />
+          <DiPhp className="text-7xl text-white h-29 w-29" />
         </motion.div>
+
+
+
 
         <motion.div
           initial="initial"
@@ -175,10 +168,19 @@ export default function Technologies() {
           <GrGithub className="text-7xl text-white h-29 w-29" />
         </motion.div>
 
-        <motion.div
+<motion.div
           initial="initial"
           animate="animate"
           variants={iconVariants(2)}
+          className="p-4"
+        >
+          <DiBitbucket className="text-7xl text-[#2684FF] h-29 w-29" />
+        </motion.div>
+
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(2.5)}
           className="p-4"
         >
           <SiPostman className="text-7xl text-[#EF5B25] bg-white rounded-[50%] h-29 w-29" />
@@ -187,7 +189,16 @@ export default function Technologies() {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(3)}
+          variants={iconVariants(2)}
+          className="p-4"
+        >
+          <DiDocker className="text-7xl text-white font-bold bg-[#0db7ed] rounded-full h-29 w-29" />
+        </motion.div>
+
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(2.5)}
           className="p-4"
         >
           <SiInsomnia className="text-7xl text-[#4000BF] bg-white rounded-[50%] h-29 w-29" />
