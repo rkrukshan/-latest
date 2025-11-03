@@ -181,7 +181,7 @@ export const PROJECTS = [
     livedemolink: "",
   },
   {
-    title: "chatapplication",
+    title: "chat Application",
     image: project8,
     description:
       "A scalable real-time chat app using Spring Boot, ThymeLeaf, Tailwind, Docker, WebSocket, and Redis (DragonflyDB) for distributed messaging and seamless multi-instance communication.",
