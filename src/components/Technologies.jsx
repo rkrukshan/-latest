@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { BsBootstrap } from "react-icons/bs";
-import { DiBitbucket, DiDocker, DiDotnet, DiJava, DiMysql, DiPhp } from "react-icons/di";
+import { DiBitbucket, DiDocker, DiDotnet, DiJava, DiJenkins, DiMysql, DiPhp } from "react-icons/di";
 import { GrGithub } from "react-icons/gr";
 import { RiNextjsLine, RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { SiAxios, SiFramer, SiInsomnia, SiMui, SiN8N, SiPostman, SiReactrouter, SiRedux, SiSpringboot } from "react-icons/si";
@@ -202,6 +202,15 @@ export default function Technologies() {
           className="p-4"
         >
           <SiInsomnia className="text-7xl text-[#4000BF] bg-white rounded-[50%] h-29 w-29" />
+        </motion.div>
+
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(2.5)}
+          className="p-4"
+        >
+          <DiJenkins className="text-7xl text-[#ffffff] bg-white rounded-[50%] h-29 w-29" />
         </motion.div>
 
 
