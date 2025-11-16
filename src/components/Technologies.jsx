@@ -210,7 +210,7 @@ export default function Technologies() {
           variants={iconVariants(2.5)}
           className="p-4"
         >
-          <SiJenkins className="text-7xl h-29 w-29" />
+          <DiJenkins className="text-7xl h-29 w-29" />
         </motion.div>
 
 
