@@ -207,7 +207,7 @@ export default function Technologies() {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(2.5)}
+          variants={iconVariants(2)}
           className="p-4"
         >
           <DiJenkins className="text-7xl h-29 w-29" />
@@ -227,7 +227,7 @@ export default function Technologies() {
         <motion.div
           initial="initial"
           animate="animate"
-          variants={iconVariants(2.5)}
+          variants={iconVariants(2)}
           className="p-4"
         >
           <SiMatomo className="text-7xl text-[#0ea600] h-29 w-29" />
