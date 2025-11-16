@@ -4,7 +4,7 @@ import { BsBootstrap } from "react-icons/bs";
 import { DiBitbucket, DiDocker, DiDotnet, DiJava, DiJenkins, DiMysql, DiPhp } from "react-icons/di";
 import { GrGithub } from "react-icons/gr";
 import { LuWebhook } from "react-icons/lu";
-import { RiNextjsLine, RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
+import { RiNextjsLine, RiReactjsLine, RiTailwindCssFill, RiWebhookFill } from "react-icons/ri";
 import { SiAxios, SiCheckmk, SiFramer, SiInsomnia, SiJenkins, SiMatomo, SiMui, SiN8N, SiNgrok, SiPostman, SiReactrouter, SiRedux, SiSpringboot } from "react-icons/si";
 
 const iconVariants = (duration) => ({
@@ -251,7 +251,7 @@ export default function Technologies() {
           variants={iconVariants(2)}
           className="p-4"
         >
-          <LuWebhook className="text-7xl text-[#ffffff] h-29 w-29" />
+          <RiWebhookFill className="text-7xl text-[#ffffff] h-29 w-29" />
         </motion.div>
 
 
