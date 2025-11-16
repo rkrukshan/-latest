@@ -205,14 +205,14 @@ export default function Technologies() {
         </motion.div>
 
         <motion.div
-          initial={{ color: "#355564" }}
-          animate={{
-            color: ["#355564", "#4b758b", "#80afbf", "#d24939", "#757172", "#000000"]
-          }}
-          transition={{ duration: 4, repeat: Infinity }}
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(2.5)}
           className="p-4"
         >
-          <DiJenkins className="text-7xl h-29 w-29" />
+          <div className="text-7xl h-29 w-29 bg-gradient-to-br from-[#355564] via-[#4b758b] to-[#80afbf] bg-clip-text text-transparent">
+            <DiJenkins />
+          </div>
         </motion.div>
 
 
