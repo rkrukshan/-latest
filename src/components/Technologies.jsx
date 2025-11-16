@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import { BsBootstrap } from "react-icons/bs";
 import { DiBitbucket, DiDocker, DiDotnet, DiJava, DiJenkins, DiMysql, DiPhp } from "react-icons/di";
+import { FcLinux } from "react-icons/fc";
 import { GrGithub } from "react-icons/gr";
 import { LuWebhook } from "react-icons/lu";
 import { RiNextjsLine, RiReactjsLine, RiTailwindCssFill, RiWebhookFill } from "react-icons/ri";
@@ -261,7 +262,7 @@ export default function Technologies() {
           variants={iconVariants(2.5)}
           className="p-4"
         >
-          <SiLinux className="text-7xl h-29 w-29" />
+          <FcLinux className="text-7xl h-29 w-29" />
         </motion.div>
 
         {/* <motion.div
