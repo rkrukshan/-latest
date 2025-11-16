@@ -210,11 +210,8 @@ export default function Technologies() {
           variants={iconVariants(2.5)}
           className="p-4"
         >
-          <div className="text-7xl h-29 w-29 bg-gradient-to-br from-[#355564] via-[#4b758b] to-[#80afbf] bg-clip-text text-transparent">
-            <DiJenkins className="fill-current" />
-          </div>
+          <SiJenkins className="text-7xl h-29 w-29" />
         </motion.div>
-
 
 
         <motion.div
