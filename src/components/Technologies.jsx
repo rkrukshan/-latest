@@ -252,7 +252,7 @@ export default function Technologies() {
           variants={iconVariants(5)}
           className="p-4"
         >
-          <SiN8N className="text-7xl text-[#fd0037] h-29 w-29" />
+          <SiN8N className="text-7xl text-[#fd0037] h-29 w-29" /> 
         </motion.div>
 
       </motion.div>
