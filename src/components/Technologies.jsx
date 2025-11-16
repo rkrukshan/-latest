@@ -5,7 +5,7 @@ import { DiBitbucket, DiDocker, DiDotnet, DiJava, DiJenkins, DiMysql, DiPhp } fr
 import { GrGithub } from "react-icons/gr";
 import { LuWebhook } from "react-icons/lu";
 import { RiNextjsLine, RiReactjsLine, RiTailwindCssFill, RiWebhookFill } from "react-icons/ri";
-import { SiAxios, SiCheckmk, SiFramer, SiInsomnia, SiJenkins, SiMatomo, SiMui, SiN8N, SiNgrok, SiPostman, SiReactrouter, SiRedux, SiSpringboot } from "react-icons/si";
+import { SiAxios, SiCheckmk, SiFramer, SiInsomnia, SiJenkins, SiLinux, SiMatomo, SiMui, SiN8N, SiNgrok, SiPostman, SiReactrouter, SiRedux, SiSpringboot } from "react-icons/si";
 
 const iconVariants = (duration) => ({
   initial: { y: -10 },
@@ -245,7 +245,7 @@ export default function Technologies() {
         </motion.div>
 
 
-<motion.div
+        <motion.div
           initial="initial"
           animate="animate"
           variants={iconVariants(2)}
@@ -254,6 +254,15 @@ export default function Technologies() {
           <RiWebhookFill className="text-7xl h-29 w-29" />
         </motion.div>
 
+
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(2.5)}
+          className="p-4"
+        >
+          <SiLinux className="text-7xl h-29 w-29" />
+        </motion.div>
 
         {/* <motion.div
           initial="initial"
