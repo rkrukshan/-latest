@@ -251,7 +251,7 @@ export default function Technologies() {
           variants={iconVariants(2)}
           className="p-4"
         >
-          <RiWebhookFill className="text-7xl text-[#ffffff] h-29 w-29" />
+          <RiWebhookFill className="text-7xl h-29 w-29" />
         </motion.div>
 
 
