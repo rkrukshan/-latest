@@ -6,7 +6,7 @@ import { FcLinux } from "react-icons/fc";
 import { GrGithub } from "react-icons/gr";
 import { LuWebhook } from "react-icons/lu";
 import { RiNextjsLine, RiReactjsLine, RiTailwindCssFill, RiWebhookFill } from "react-icons/ri";
-import { SiAxios, SiCheckmk, SiFramer, SiInsomnia, SiJenkins, SiLinux, SiMatomo, SiMui, SiN8N, SiNgrok, SiPostman, SiReactrouter, SiRedux, SiSpringboot } from "react-icons/si";
+import { SiAxios, SiCheckmk, SiFramer, SiInsomnia, SiJenkins, SiJira, SiLinux, SiMatomo, SiMui, SiN8N, SiNgrok, SiPostman, SiReactrouter, SiRedux, SiSpringboot } from "react-icons/si";
 
 const iconVariants = (duration) => ({
   initial: { y: -10 },
@@ -204,6 +204,15 @@ export default function Technologies() {
           className="p-4"
         >
           <SiInsomnia className="text-7xl text-[#4000BF] bg-white rounded-[50%] h-29 w-29" />
+        </motion.div>
+
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(2.5)}
+          className="p-4"
+        >
+          <SiJira className="text-[#0146b3] text-7xl h-29 w-29" />
         </motion.div>
 
         <motion.div
