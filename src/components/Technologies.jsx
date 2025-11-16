@@ -240,7 +240,7 @@ export default function Technologies() {
           variants={iconVariants(2.5)}
           className="p-4"
         >
-          <SiNgrok className="text-7xl text-[#0ea600] h-29 w-29" />
+          <SiNgrok className="text-7xl text-[#ffffff] h-29 w-29" />
         </motion.div>
 
 
