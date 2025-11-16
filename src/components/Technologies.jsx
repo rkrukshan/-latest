@@ -4,7 +4,7 @@ import { BsBootstrap } from "react-icons/bs";
 import { DiBitbucket, DiDocker, DiDotnet, DiJava, DiJenkins, DiMysql, DiPhp } from "react-icons/di";
 import { GrGithub } from "react-icons/gr";
 import { RiNextjsLine, RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
-import { SiAxios, SiCheckmk, SiFramer, SiInsomnia, SiMatomo, SiMui, SiN8N, SiNgrok, SiPostman, SiReactrouter, SiRedux, SiSpringboot } from "react-icons/si";
+import { SiAxios, SiCheckmk, SiFramer, SiInsomnia, SiJenkins, SiMatomo, SiMui, SiN8N, SiNgrok, SiPostman, SiReactrouter, SiRedux, SiSpringboot } from "react-icons/si";
 
 const iconVariants = (duration) => ({
   initial: { y: -10 },
@@ -210,12 +210,8 @@ export default function Technologies() {
           variants={iconVariants(2.5)}
           className="p-4"
         >
-          <div className="text-7xl h-29 w-29 bg-gradient-to-br from-[#355564] via-[#4b758b] to-[#80afbf] bg-clip-text text-transparent">
-            <DiJenkins />
-          </div>
+          <SiJenkins className="text-7xl text-[#ffffff] h-29 w-29" />
         </motion.div>
-
-
 
 
         <motion.div
