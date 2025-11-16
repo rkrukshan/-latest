@@ -220,7 +220,7 @@ export default function Technologies() {
           variants={iconVariants(2.5)}
           className="p-4"
         >
-          <SiCheckmk className="text-7xl text-[#115a17] h-29 w-29" />
+          <SiCheckmk className="text-7xl text-[#15D1A0] h-29 w-29" />
         </motion.div>
 
 
