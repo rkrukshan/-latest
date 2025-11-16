@@ -4,7 +4,7 @@ import { BsBootstrap } from "react-icons/bs";
 import { DiBitbucket, DiDocker, DiDotnet, DiJava, DiJenkins, DiMysql, DiPhp } from "react-icons/di";
 import { GrGithub } from "react-icons/gr";
 import { RiNextjsLine, RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
-import { SiAxios, SiCheckmk, SiFramer, SiInsomnia, SiMui, SiN8N, SiPostman, SiReactrouter, SiRedux, SiSpringboot } from "react-icons/si";
+import { SiAxios, SiCheckmk, SiFramer, SiInsomnia, SiMatomo, SiMui, SiN8N, SiPostman, SiReactrouter, SiRedux, SiSpringboot } from "react-icons/si";
 
 const iconVariants = (duration) => ({
   initial: { y: -10 },
@@ -221,6 +221,16 @@ export default function Technologies() {
           className="p-4"
         >
           <SiCheckmk className="text-7xl text-[#15D1A0] h-29 w-29" />
+        </motion.div>
+
+
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={iconVariants(2.5)}
+          className="p-4"
+        >
+          <SiMatomo className="text-7xl text-[#0ea600] h-29 w-29" />
         </motion.div>
 
 
