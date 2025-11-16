@@ -217,6 +217,7 @@ export default function Technologies() {
 
 
 
+
         <motion.div
           initial="initial"
           animate="animate"
