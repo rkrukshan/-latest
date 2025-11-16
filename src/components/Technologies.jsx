@@ -205,13 +205,16 @@ export default function Technologies() {
         </motion.div>
 
         <motion.div
-          initial="initial"
-          animate="animate"
-          variants={iconVariants(2.5)}
+          initial={{ color: "#355564" }}
+          animate={{
+            color: ["#355564", "#4b758b", "#80afbf", "#d24939", "#757172", "#000000"]
+          }}
+          transition={{ duration: 4, repeat: Infinity }}
           className="p-4"
         >
-          <SiJenkins className="text-7xl text-[#ffffff] h-29 w-29" />
+          <DiJenkins className="text-7xl h-29 w-29" />
         </motion.div>
+
 
 
         <motion.div
