@@ -211,7 +211,7 @@ export default function Technologies() {
           className="p-4"
         >
           <div className="text-7xl h-29 w-29 bg-gradient-to-br from-[#355564] via-[#4b758b] to-[#80afbf] bg-clip-text text-transparent">
-            <DiJenkins />
+            <DiJenkins className="fill-current" />
           </div>
         </motion.div>
 
