@@ -14,9 +14,11 @@ const textVariants = {
 export default function Experience() {
     return (
         <div className="pb-24 px-4 sm:px-6 lg:px-8">
+            {/* Heading lazy load */}
             <motion.h2
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: -100 }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.5 }}
                 className="text-3xl sm:text-4xl text-white text-center my-12 sm:my-20"
             >
@@ -24,10 +26,14 @@ export default function Experience() {
             </motion.h2>
 
             <div className="w-full max-w-4xl mx-auto">
-                {EXPERIENCES.map((exp, i) => (
-                    <div
-                        key={i}
+                {EXPERIENCES.map((exp, index) => (
+                    <motion.div
+                        key={index}
                         className="mb-12 flex flex-col lg:flex-row flex-wrap justify-center lg:justify-start"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.8, delay: index * 0.1 }}
                     >
                         <motion.div
                             initial="hidden"
@@ -36,31 +42,52 @@ export default function Experience() {
                             variants={textVariants}
                             className="w-full max-w-xl mx-auto px-4 sm:px-0 md:flex-col items-center justify-center lg:px-0 lg:w-aut"
                         >
-                            <div className="mb-3 text-center sm:text-center">
+                            {/* Role & Company */}
+                            <motion.div
+                                className="mb-3 text-center sm:text-center"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5 }}
+                            >
                                 <h3 className="text-xl sm:text-2xl font-semibold text-white">
                                     {exp.role}
                                 </h3>
                                 <p className="text-md text-stone-400">{exp.company}</p>
                                 <p className="text-sm text-stone-500">{exp.year}</p>
-                            </div>
+                            </motion.div>
 
-                            <p className="text-sm my-2 w-auto py-6 md:text-2xl text-justify leading-relaxed tracking-tighter">
+                            {/* Description */}
+                            <motion.p
+                                className="text-sm my-2 w-auto py-6 md:text-2xl text-justify leading-relaxed tracking-tighter"
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                transition={{ duration: 0.5, delay: 0.1 }}
+                            >
                                 {exp.description}
-                            </p>
+                            </motion.p>
 
-                            <div className="flex flex-wrap justify-center items-center lg:justify-center gap-2">
+                            {/* Technologies */}
+                            <motion.div
+                                className="flex flex-wrap justify-center items-center lg:justify-center gap-2"
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                            >
                                 {exp.technologies.map((tech, i) => (
-                                    <span
+                                    <motion.span
+                                        key={i}
                                         className="flex items-center gap-2 rounded-sm bg-stone-900/80 px-3 py-1.5 text-sm font-medium text-stone-200 shadow-sm hover:bg-stone-800 transition cursor-default"
-                                        key={i}>
-
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.4, delay: i * 0.05 }}
+                                    >
                                         {exp.techlogo[i] && React.createElement(exp.techlogo[i])}
                                         {tech}
-                                    </span>
+                                    </motion.span>
                                 ))}
-                            </div>
+                            </motion.div>
                         </motion.div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>

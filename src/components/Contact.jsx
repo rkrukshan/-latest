@@ -1,6 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { CONTACT } from "../constants";
 import { motion } from "framer-motion";
+
+// Lazy load text blocks
+const LazyText = React.lazy(() => Promise.resolve({ default: motion.p }));
 
 export default function Contact() {
   const textVariants = {
@@ -12,7 +15,7 @@ export default function Contact() {
     },
   };
 
-const textVariants1 = {
+  const textVariants1 = {
     hidden: { opacity: 0, x: -100 },
     visible: {
       opacity: 1,
@@ -20,7 +23,6 @@ const textVariants1 = {
       transition: { duration: 1, ease: "easeInOut", delay: 0.1 },
     },
   };
-
 
   const textVariants2 = {
     hidden: { opacity: 0.25, x: 100 },
@@ -41,36 +43,48 @@ const textVariants1 = {
       >
         Get in Touch
       </motion.h2>
+
       <div className="text-center tracking-tight">
-        <motion.p
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "20%" }}
-          variants={textVariants}
-          className="my-4"
-        >
-          {CONTACT.address}
-        </motion.p>
 
-        <motion.p
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "20%" }}
-          variants={textVariants1}
-          className="my-4"
-        >
-          {CONTACT.phoneNo}
-        </motion.p>
+        {/* Address */}
+        <Suspense fallback={<p className="opacity-0 my-4">...</p>}>
+          <LazyText
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "20%" }}
+            variants={textVariants}
+            className="my-4"
+          >
+            {CONTACT.address}
+          </LazyText>
+        </Suspense>
 
-        <motion.p
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "20%" }}
-          variants={textVariants2}
-          className="my-4"
-        >
-          {CONTACT.email}
-        </motion.p>
+        {/* Phone */}
+        <Suspense fallback={<p className="opacity-0 my-4">...</p>}>
+          <LazyText
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "20%" }}
+            variants={textVariants1}
+            className="my-4"
+          >
+            {CONTACT.phoneNo}
+          </LazyText>
+        </Suspense>
+
+        {/* Email */}
+        <Suspense fallback={<p className="opacity-0 my-4">...</p>}>
+          <LazyText
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "20%" }}
+            variants={textVariants2}
+            className="my-4"
+          >
+            {CONTACT.email}
+          </LazyText>
+        </Suspense>
+
       </div>
     </div>
   );
