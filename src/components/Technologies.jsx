@@ -215,7 +215,7 @@ export default function Technologies() {
           className="p-4"
         >
           <SiNgrok className="text-7xl text-[#ffffff] h-29 w-29" />
-        </motion.div>
+        </motion.div> 
 
 
         <motion.div
