@@ -1,14 +1,34 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { BsBootstrap } from "react-icons/bs";
-import { DiBitbucket, DiDocker, DiDotnet, DiJava, DiJenkins, DiMysql, DiPhp } from "react-icons/di";
-import { FcLinux } from "react-icons/fc";
-import { GrGithub } from "react-icons/gr";
-import { RiNextjsLine, RiReactjsLine, RiTailwindCssFill, RiWebhookFill } from "react-icons/ri";
-import { SiAxios, SiCheckmk, SiFramer, SiInsomnia, SiJenkins, SiJira, SiMatomo, SiMui, SiNgrok, SiPostman, SiReactrouter, SiRedux, SiSpringboot } from "react-icons/si";
+import React, { Suspense } from "react";
 
-// Icon animation variants
-const iconVariants = (duration) => ({
+// Lazy load all icons individually
+const RiReactjsLine = React.lazy(() => import("react-icons/ri").then(mod => ({ default: mod.RiReactjsLine })));
+const RiTailwindCssFill = React.lazy(() => import("react-icons/ri").then(mod => ({ default: mod.RiTailwindCssFill })));
+const SiReactrouter = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiReactrouter })));
+const RiNextjsLine = React.lazy(() => import("react-icons/ri").then(mod => ({ default: mod.RiNextjsLine })));
+const SiRedux = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiRedux })));
+const SiAxios = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiAxios })));
+const SiMui = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiMui })));
+const SiFramer = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiFramer })));
+const BsBootstrap = React.lazy(() => import("react-icons/bs").then(mod => ({ default: mod.BsBootstrap })));
+const DiJava = React.lazy(() => import("react-icons/di").then(mod => ({ default: mod.DiJava })));
+const SiSpringboot = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiSpringboot })));
+const DiMysql = React.lazy(() => import("react-icons/di").then(mod => ({ default: mod.DiMysql })));
+const DiPhp = React.lazy(() => import("react-icons/di").then(mod => ({ default: mod.DiPhp })));
+const GrGithub = React.lazy(() => import("react-icons/gr").then(mod => ({ default: mod.GrGithub })));
+const DiBitbucket = React.lazy(() => import("react-icons/di").then(mod => ({ default: mod.DiBitbucket })));
+const SiPostman = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiPostman })));
+const DiDocker = React.lazy(() => import("react-icons/di").then(mod => ({ default: mod.DiDocker })));
+const SiInsomnia = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiInsomnia })));
+const SiNgrok = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiNgrok })));
+const DiJenkins = React.lazy(() => import("react-icons/di").then(mod => ({ default: mod.DiJenkins })));
+const SiCheckmk = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiCheckmk })));
+const SiMatomo = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiMatomo })));
+const SiJira = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiJira })));
+const RiWebhookFill = React.lazy(() => import("react-icons/ri").then(mod => ({ default: mod.RiWebhookFill })));
+const FcLinux = React.lazy(() => import("react-icons/fc").then(mod => ({ default: mod.FcLinux })));
+
+const floatingVariants = (duration) => ({
   initial: { y: -10, opacity: 0 },
   animate: {
     y: [10, -10],
@@ -24,36 +44,35 @@ const iconVariants = (duration) => ({
 
 export default function Technologies() {
   const icons = [
-    { component: RiReactjsLine, color: "#00a7e5", duration: 2 },
-    { component: RiTailwindCssFill, color: "#06B6D4", duration: 2.5 },
-    { component: SiReactrouter, color: "#D0021B", duration: 2 },
-    { component: RiNextjsLine, color: "#C0C0C0", duration: 2.5 },
-    { component: SiRedux, color: "#764abc", duration: 2 },
-    { component: SiAxios, color: "blue", duration: 2.5 },
-    { component: SiMui, color: "#2196f3", duration: 2 },
-    { component: SiFramer, color: "blue", duration: 2.5 },
-    { component: BsBootstrap, color: "#602C50", duration: 2 },
-    { component: DiJava, color: "#5382a1", duration: 2.5 },
-    { component: SiSpringboot, color: "#6DB33F", duration: 2 },
-    { component: DiMysql, color: "skyblue", duration: 2.5 },
-    { component: DiPhp, color: "white", duration: 2 },
-    { component: GrGithub, color: "white", duration: 2.5 },
-    { component: DiBitbucket, color: "#2684FF", duration: 2 },
-    { component: SiPostman, color: "#EF5B25", duration: 2.5 },
-    { component: DiDocker, color: "white", duration: 2 },
-    { component: SiInsomnia, color: "#4000BF", duration: 2.5 },
-    { component: SiNgrok, color: "white", duration: 2.5 },
-    { component: DiJenkins, color: "white", duration: 2 },
-    { component: SiCheckmk, color: "#15D1A0", duration: 2.5 },
-    { component: SiMatomo, color: "#0ea600", duration: 2 },
-    { component: SiJira, color: "#0146b3", duration: 2.5 },
-    { component: RiWebhookFill, color: "white", duration: 2 },
-    { component: FcLinux, color: "white", duration: 2.5 },
+    [RiReactjsLine, 2, "text-[#00a7e5]"],
+    [RiTailwindCssFill, 2.5, "text-[#06B6D4]"],
+    [SiReactrouter, 2, "text-[#D0021B]"],
+    [RiNextjsLine, 2.5, "text-[#C0C0C0]"],
+    [SiRedux, 2, "text-[#764abc]"],
+    [SiAxios, 2.5, "text-blue-900"],
+    [SiMui, 2, "text-[#2196f3]"],
+    [SiFramer, 2.5, "text-blue-400"],
+    [BsBootstrap, 2, "text-[#602C50]"],
+    [DiJava, 2.5, "text-[#5382a1]"],
+    [SiSpringboot, 2, "text-[#6DB33F]"],
+    [DiMysql, 2.5, "text-blue-300"],
+    [DiPhp, 2, "text-white"],
+    [GrGithub, 2.5, "text-white"],
+    [DiBitbucket, 2, "text-[#2684FF]"],
+    [SiPostman, 2.5, "text-[#EF5B25] bg-white rounded-[50%]"],
+    [DiDocker, 2, "text-white font-bold bg-[#0db7ed] rounded-full"],
+    [SiInsomnia, 2.5, "text-[#4000BF] bg-white rounded-[50%]"],
+    [SiNgrok, 2.5, "text-[#ffffff]"],
+    [DiJenkins, 2, ""],
+    [SiCheckmk, 2.5, "text-[#15D1A0]"],
+    [SiMatomo, 2, "text-[#0ea600]"],
+    [SiJira, 2.5, "text-[#0146b3]"],
+    [RiWebhookFill, 2, ""],
+    [FcLinux, 2.5, ""]
   ];
 
   return (
     <div>
-      {/* Heading lazy load */}
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
@@ -64,34 +83,23 @@ export default function Technologies() {
         Technologies
       </motion.h2>
 
-      {/* Icons container */}
-      <motion.div
-        className="flex flex-wrap lg:flex-row items-center justify-center gap-4"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        {icons.map((icon, i) => {
-          const IconComponent = icon.component;
-          return (
+      <div className="flex flex-wrap lg:flex-row items-center justify-center gap-4">
+        {icons.map(([Icon, duration, color], i) => (
+          <Suspense key={i} fallback={<div className="p-4 w-29 h-29 bg-stone-900 rounded-full animate-pulse"></div>}>
             <motion.div
-              key={i}
               className="p-4"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
               animate="animate"
-              variants={iconVariants(icon.duration)}
+              variants={floatingVariants(duration)}
             >
-              <IconComponent
-                className="text-7xl h-29 w-29"
-                style={{ color: icon.color }}
-              />
+              <Icon className={`text-7xl h-29 w-29 ${color}`} />
             </motion.div>
-          );
-        })}
-      </motion.div>
+          </Suspense>
+        ))}
+      </div>
     </div>
   );
 }
