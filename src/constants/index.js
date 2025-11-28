@@ -1,4 +1,13 @@
-import { DiCss3, DiDocker, DiGithub, DiHtml5, DiMysql, DiRedis } from "react-icons/di";
+import {
+  DiBitbucket,
+  DiCss3,
+  DiDocker,
+  DiGithub,
+  DiHtml5,
+  DiJenkins,
+  DiMysql,
+  DiRedis,
+} from "react-icons/di";
 import project1 from "../assets/projects/project-1.webp";
 import project2 from "../assets/projects/project-2.webp";
 import project3 from "../assets/projects/project-3.webp";
@@ -9,6 +18,7 @@ import project7 from "../assets/projects/project-7.webp";
 import project8 from "../assets/projects/project-8.webp";
 import {
   FaCss3Alt,
+  FaDocker,
   FaGitAlt,
   FaPooStorm,
   FaSquareJs,
@@ -18,11 +28,19 @@ import {
   SiAdobeillustrator,
   SiAdobephotoshop,
   SiAxios,
+  SiBitbucket,
+  SiCheckmk,
   SiFirebase,
   SiFramer,
+  SiGit,
+  SiGitforwindows,
   SiGithub,
   SiInsomnia,
+  SiJenkins,
+  SiJira,
+  SiMatomo,
   SiMui,
+  SiNextdotjs,
   SiPhp,
   SiPostman,
   SiReactrouter,
@@ -35,12 +53,60 @@ import { FaJsSquare, FaReact } from "react-icons/fa";
 import { RiReactjsLine } from "react-icons/ri";
 import WebsocketIcon from "../components/icons/WebsocketIcon";
 import { GiDragonfly } from "react-icons/gi";
+import { TbWebhook } from "react-icons/tb";
 
 export const HERO_CONTENT = `Hi, I'm Rukmanghan Selvakumar, a BIT (Bachelor of Information Technology) graduate with a deep passion for coding and a demonstrated ability to rapidly master new programming tools and technologies. My enthusiasm for technology fuels my drive to develop innovative solutions using advanced coding techniques. I am dedicated to creating cutting-edge software that optimizes systems and sets new industry benchmarks.`;
 
 export const ABOUT_TEXT = `I am proficient in various programming tools and technologies, with extensive experience in web development. I possess a broad understanding of software development concepts and best practices and am dedicated to staying current with the latest industry trends and technologies. I actively seek new technologies and continually explore ways to scale my skills and knowledge to drive innovation and excellence in the industry.`;
 
 export const EXPERIENCES = [
+  {
+    year: "2025 - November to Present",
+    role: "Intern Software Engineer (On Site)",
+    company: "Homeit System.",
+    description: `contributed to the full-stack development and delivery of scalable web applications, employing Next.js for modern architecture and Tailwind CSS for efficient, utility-first styling. I managed the end-to-end SDLC by utilizing Jira for agile tracking and Bitbucket for collaborative source control, leveraging webhooks to automate CI/CD pipelines orchestrated by Jenkins. I implemented robust containerization with Docker to ensure consistent and portable development and production environments, often running within WSL (Windows Subsystem for Linux) to significantly reduce setup complexity. Furthermore, I executed crucial SEO strategies and integrated Matomo for comprehensive user behavior analytics, driving product optimization and data-driven feature enhancements, while maintaining high application reliability by configuring real-time monitoring and alerting using Checkmk to proactively identify and resolve performance bottlenecks.`,
+    technologies: [
+      "Docker",
+      "Jenkins",
+      "Check Mk",
+      "Matomo",
+      "Jira",
+      "WSL",
+      "Webhooks",
+      "Next.js",
+      "Javascript",
+      "Tailwind CSS",
+      "GIT",
+      "Bit Bucket",
+    ],
+    techlogo: [
+      FaDocker, // Docker
+      DiJenkins, // Jenkins
+      SiCheckmk, // Checkmk
+      SiMatomo, // Matomo
+      SiJira, // Jira
+      SiGitforwindows, // WSL (closest icon)
+      TbWebhook, // Webhooks
+      SiNextdotjs, // Next.js
+      FaJsSquare, // JavaScript
+      SiTailwindcss, // Tailwind CSS
+      SiGit, // Git
+      DiBitbucket, // Bitbucket
+    ],
+
+    // techcolor: [
+    //   "logo-js",
+    //   "logo-react",
+    //   "logo-tailwind",
+    //   "logo-redux",
+    //   "logo-github",
+    //   "logo-firebase",
+    //   "logo-axios",
+    //   "logo-mui",
+    //   "logo-postman",
+    //   "logo-wordpress",
+    // ],
+  },
   {
     year: "2025 - March to 2025 - September",
     role: "Intern Software Engineer (On Site)",
@@ -185,8 +251,24 @@ export const PROJECTS = [
     image: project8,
     description:
       "A scalable real-time chat app using Spring Boot, ThymeLeaf, Tailwind, Docker, WebSocket, and Redis (DragonflyDB) for distributed messaging and seamless multi-instance communication.",
-    technologies: ["SpringBoot", "ThymeLeaf","Websocket","Redis","Docker","Dragonfly DB", "Tailwind"],
-    techlogo: [SiSpringboot,SiThymeleaf, WebsocketIcon,DiRedis,DiDocker,GiDragonfly,SiTailwindcss],
+    technologies: [
+      "SpringBoot",
+      "ThymeLeaf",
+      "Websocket",
+      "Redis",
+      "Docker",
+      "Dragonfly DB",
+      "Tailwind",
+    ],
+    techlogo: [
+      SiSpringboot,
+      SiThymeleaf,
+      WebsocketIcon,
+      DiRedis,
+      DiDocker,
+      GiDragonfly,
+      SiTailwindcss,
+    ],
 
     link: "https://github.com/rkrukshan/chatapplication.git",
     livedemolink: "",
