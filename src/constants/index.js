@@ -54,6 +54,7 @@ import { RiReactjsLine } from "react-icons/ri";
 import WebsocketIcon from "../components/icons/WebsocketIcon";
 import { GiDragonfly } from "react-icons/gi";
 import { TbWebhook } from "react-icons/tb";
+import { FcLinux } from "react-icons/fc";
 
 export const HERO_CONTENT = `Hi, I'm Rukmanghan Selvakumar, a BIT (Bachelor of Information Technology) graduate with a deep passion for coding and a demonstrated ability to rapidly master new programming tools and technologies. My enthusiasm for technology fuels my drive to develop innovative solutions using advanced coding techniques. I am dedicated to creating cutting-edge software that optimizes systems and sets new industry benchmarks.`;
 
@@ -85,7 +86,7 @@ export const EXPERIENCES = [
       SiCheckmk, // Checkmk
       SiMatomo, // Matomo
       SiJira, // Jira
-      SiGitforwindows, // WSL (closest icon)
+      FcLinux, // WSL (closest icon)
       TbWebhook, // Webhooks
       SiNextdotjs, // Next.js
       FaJsSquare, // JavaScript
