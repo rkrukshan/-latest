@@ -61,53 +61,53 @@ export const HERO_CONTENT = `Hi, I'm Rukmanghan Selvakumar, a BIT (Bachelor of I
 export const ABOUT_TEXT = `I am proficient in various programming tools and technologies, with extensive experience in web development. I possess a broad understanding of software development concepts and best practices and am dedicated to staying current with the latest industry trends and technologies. I actively seek new technologies and continually explore ways to scale my skills and knowledge to drive innovation and excellence in the industry.`;
 
 export const EXPERIENCES = [
-  {
-    year: "2025 - November to Present",
-    role: "Intern Software Engineer (On Site)",
-    company: "Homeit System.",
-    description: `contributed to the full-stack development and delivery of scalable web applications, employing Next.js for modern architecture and Tailwind CSS for efficient, utility-first styling. I managed the end-to-end SDLC by utilizing Jira for agile tracking and Bitbucket for collaborative source control, leveraging webhooks to automate CI/CD pipelines orchestrated by Jenkins. I implemented robust containerization with Docker to ensure consistent and portable development and production environments, often running within WSL (Windows Subsystem for Linux) to significantly reduce setup complexity. Furthermore, I executed crucial SEO strategies and integrated Matomo for comprehensive user behavior analytics, driving product optimization and data-driven feature enhancements, while maintaining high application reliability by configuring real-time monitoring and alerting using Checkmk to proactively identify and resolve performance bottlenecks.`,
-    technologies: [
-      "Docker",
-      "Jenkins",
-      "Check Mk",
-      "Matomo",
-      "Jira",
-      "WSL",
-      "Webhooks",
-      "Next.js",
-      "Javascript",
-      "Tailwind CSS",
-      "GIT",
-      "Bit Bucket",
-    ],
-    techlogo: [
-      FaDocker, // Docker
-      DiJenkins, // Jenkins
-      SiCheckmk, // Checkmk
-      SiMatomo, // Matomo
-      SiJira, // Jira
-      FcLinux, // WSL (closest icon)
-      TbWebhook, // Webhooks
-      SiNextdotjs, // Next.js
-      FaJsSquare, // JavaScript
-      SiTailwindcss, // Tailwind CSS
-      SiGit, // Git
-      DiBitbucket, // Bitbucket
-    ],
+  // {
+  //   year: "2025 - November to Present",
+  //   role: "Intern Software Engineer (On Site)",
+  //   company: "Homeit System.",
+  //   description: `contributed to the full-stack development and delivery of scalable web applications, employing Next.js for modern architecture and Tailwind CSS for efficient, utility-first styling. I managed the end-to-end SDLC by utilizing Jira for agile tracking and Bitbucket for collaborative source control, leveraging webhooks to automate CI/CD pipelines orchestrated by Jenkins. I implemented robust containerization with Docker to ensure consistent and portable development and production environments, often running within WSL (Windows Subsystem for Linux) to significantly reduce setup complexity. Furthermore, I executed crucial SEO strategies and integrated Matomo for comprehensive user behavior analytics, driving product optimization and data-driven feature enhancements, while maintaining high application reliability by configuring real-time monitoring and alerting using Checkmk to proactively identify and resolve performance bottlenecks.`,
+  //   technologies: [
+  //     "Docker",
+  //     "Jenkins",
+  //     "Check Mk",
+  //     "Matomo",
+  //     "Jira",
+  //     "WSL",
+  //     "Webhooks",
+  //     "Next.js",
+  //     "Javascript",
+  //     "Tailwind CSS",
+  //     "GIT",
+  //     "Bit Bucket",
+  //   ],
+  //   techlogo: [
+  //     FaDocker, // Docker
+  //     DiJenkins, // Jenkins
+  //     SiCheckmk, // Checkmk
+  //     SiMatomo, // Matomo
+  //     SiJira, // Jira
+  //     FcLinux, // WSL (closest icon)
+  //     TbWebhook, // Webhooks
+  //     SiNextdotjs, // Next.js
+  //     FaJsSquare, // JavaScript
+  //     SiTailwindcss, // Tailwind CSS
+  //     SiGit, // Git
+  //     DiBitbucket, // Bitbucket
+  //   ],
 
-    // techcolor: [
-    //   "logo-js",
-    //   "logo-react",
-    //   "logo-tailwind",
-    //   "logo-redux",
-    //   "logo-github",
-    //   "logo-firebase",
-    //   "logo-axios",
-    //   "logo-mui",
-    //   "logo-postman",
-    //   "logo-wordpress",
-    // ],
-  },
+  //   // techcolor: [
+  //   //   "logo-js",
+  //   //   "logo-react",
+  //   //   "logo-tailwind",
+  //   //   "logo-redux",
+  //   //   "logo-github",
+  //   //   "logo-firebase",
+  //   //   "logo-axios",
+  //   //   "logo-mui",
+  //   //   "logo-postman",
+  //   //   "logo-wordpress",
+  //   // ],
+  // },
   {
     year: "2025 - March to 2025 - September",
     role: "Intern Software Engineer (On Site)",
