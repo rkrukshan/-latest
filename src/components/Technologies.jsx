@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React, { Suspense } from "react";
+import { SiStrapi } from "react-icons/si";
 
 // Lazy load all icons individually
 const RiReactjsLine = React.lazy(() => import("react-icons/ri").then(mod => ({ default: mod.RiReactjsLine })));
@@ -40,6 +41,7 @@ const floatingVariants = (duration) => ({
       ease: "easeInOut",
     },
   },
+  
 });
 
 export default function Technologies() {
@@ -59,6 +61,7 @@ export default function Technologies() {
     [DiPhp, 2, "text-white"],
     [GrGithub, 2.5, "text-white"],
     [DiBitbucket, 2, "text-[#2684FF]"],
+    [SiStrapi, 2, "text-[#4945FF] bg-white rounded-[27%]"],
     [SiPostman, 2.5, "text-[#EF5B25] bg-white rounded-[50%]"],
     [DiDocker, 2, "text-white font-bold bg-[#0db7ed] rounded-full"],
     [SiInsomnia, 2.5, "text-[#4000BF] bg-white rounded-[50%]"],
