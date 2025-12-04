@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import profilePic from "../assets/images/Rukmanghan.png";
 import { HERO_CONTENT } from "../constants/index";
-import resume from '../assets/PDF/S.Rukmanghan_Resume.pdf'
+import resume from '../assets/PDF/S.Rukmanghan_Resume.pdf';
 import { motion } from "framer-motion";
 
 const imageVariants = {
@@ -22,6 +22,16 @@ const textVariants = {
 };
 
 export default function Hero() {
+  // ✅ Preload profile image in idle time (non-blocking)
+  useEffect(() => {
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(() => {
+        const img = new Image();
+        img.src = profilePic;
+      });
+    }
+  }, []);
+
   return (
     <div className="pb-4 container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-wrap lg:flex-row-reverse">
@@ -36,7 +46,9 @@ export default function Hero() {
               viewport={{ once: true, amount: 0.5 }}
               src={profilePic}
               alt="Rukmanghan"
-              loading="lazy" // <-- Lazy load image
+              loading="lazy"
+              decoding="async"
+              fetchpriority="low"
               className="rounded-3xl w-[250px] h-[420px] md:w-[250px] md:h-[450px] lg:h-[550px] lg:w-[350px] hover:shadow-slate-400 hover:shadow-xl transition-all delay-150"
             />
           </div>
@@ -51,7 +63,7 @@ export default function Hero() {
           className="w-full lg:w-1/2"
         >
           <div className="flex flex-col items-center md:justify-center lg:items-start mt-10">
-            
+
             {/* Name */}
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -86,7 +98,7 @@ export default function Hero() {
             </motion.p>
 
             {/* Download Resume (optional) */}
-            {/* 
+            {/*
             <motion.a
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 100 }}
