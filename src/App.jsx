@@ -1,19 +1,36 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
+import lazyWithPreload from "react-lazy-with-preload";
 
-// Lazy-loaded components (structure unchanged)
-const Navbar = lazy(() => import("./components/Navbar"));
-const Hero = lazy(() => import("./components/Hero"));
-const Technologies = lazy(() => import("./components/Technologies"));
-const Projects = lazy(() => import("./components/Projects"));
-const Experience = lazy(() => import("./components/Experience"));
-const Form = lazy(() => import("./components/Form"));
-const Contact = lazy(() => import("./components/Contact"));
+// 🔥 Preload-enabled lazy components
+const Navbar = lazyWithPreload(() => import("./components/Navbar"));
+const Hero = lazyWithPreload(() => import("./components/Hero"));
+const Technologies = lazyWithPreload(() => import("./components/Technologies"));
+const Projects = lazyWithPreload(() => import("./components/Projects"));
+const Experience = lazyWithPreload(() => import("./components/Experience"));
+const Form = lazyWithPreload(() => import("./components/Form"));
+const Contact = lazyWithPreload(() => import("./components/Contact"));
 
 export default function App() {
+
+  // ✅ Preload important above-the-fold components immediately
+  React.useEffect(() => {
+    Navbar.preload();
+    Hero.preload();
+
+    // ✅ Preload remaining in idle time (non-blocking)
+    requestIdleCallback(() => {
+      Technologies.preload();
+      Projects.preload();
+      Experience.preload();
+      Form.preload();
+      Contact.preload();
+    });
+  }, []);
+
   return (
     <div className="overflow-x-hidden text-stone-300 antialiased">
 
-      {/* Background Layers (unchanged) */}
+      {/* Background Layers (UNCHANGED ✅) */}
       <div className="fixed inset-0 -z-10">
         <div className="relative h-full w-full bg-black">
 
@@ -26,37 +43,20 @@ export default function App() {
         </div>
       </div>
 
-      {/* Main Content */}
+      {/* Main Content (UNCHANGED ✅) */}
       <div className="container px-8 mx-auto">
 
-        {/* Suspense wrapper for smooth lazy loading */}
+        {/* ✅ Grouped Suspense for less fallback flashing */}
         <Suspense fallback={null}>
           <Navbar />
-        </Suspense>
-
-        <Suspense fallback={null}>
           <Hero />
-        </Suspense>
-
-        <Suspense fallback={null}>
           <Technologies />
-        </Suspense>
-
-        <Suspense fallback={null}>
           <Projects />
-        </Suspense>
-
-        <Suspense fallback={null}>
           <Experience />
-        </Suspense>
-
-        <Suspense fallback={null}>
           <Form />
-        </Suspense>
-
-        <Suspense fallback={null}>
           <Contact />
         </Suspense>
+
       </div>
     </div>
   );
