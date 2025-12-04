@@ -1,33 +1,34 @@
 import { motion } from "framer-motion";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
+import lazyWithPreload from "react-lazy-with-preload";
 import { SiSentry, SiStrapi } from "react-icons/si";
 
-// Lazy load all icons individually
-const RiReactjsLine = React.lazy(() => import("react-icons/ri").then(mod => ({ default: mod.RiReactjsLine })));
-const RiTailwindCssFill = React.lazy(() => import("react-icons/ri").then(mod => ({ default: mod.RiTailwindCssFill })));
-const SiReactrouter = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiReactrouter })));
-const RiNextjsLine = React.lazy(() => import("react-icons/ri").then(mod => ({ default: mod.RiNextjsLine })));
-const SiRedux = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiRedux })));
-const SiAxios = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiAxios })));
-const SiMui = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiMui })));
-const SiFramer = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiFramer })));
-const BsBootstrap = React.lazy(() => import("react-icons/bs").then(mod => ({ default: mod.BsBootstrap })));
-const DiJava = React.lazy(() => import("react-icons/di").then(mod => ({ default: mod.DiJava })));
-const SiSpringboot = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiSpringboot })));
-const DiMysql = React.lazy(() => import("react-icons/di").then(mod => ({ default: mod.DiMysql })));
-const DiPhp = React.lazy(() => import("react-icons/di").then(mod => ({ default: mod.DiPhp })));
-const GrGithub = React.lazy(() => import("react-icons/gr").then(mod => ({ default: mod.GrGithub })));
-const DiBitbucket = React.lazy(() => import("react-icons/di").then(mod => ({ default: mod.DiBitbucket })));
-const SiPostman = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiPostman })));
-const DiDocker = React.lazy(() => import("react-icons/di").then(mod => ({ default: mod.DiDocker })));
-const SiInsomnia = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiInsomnia })));
-const SiNgrok = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiNgrok })));
-const DiJenkins = React.lazy(() => import("react-icons/di").then(mod => ({ default: mod.DiJenkins })));
-const SiCheckmk = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiCheckmk })));
-const SiMatomo = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiMatomo })));
-const SiJira = React.lazy(() => import("react-icons/si").then(mod => ({ default: mod.SiJira })));
-const RiWebhookFill = React.lazy(() => import("react-icons/ri").then(mod => ({ default: mod.RiWebhookFill })));
-const FcLinux = React.lazy(() => import("react-icons/fc").then(mod => ({ default: mod.FcLinux })));
+// ✅ Preload-enabled lazy icons
+const RiReactjsLine = lazyWithPreload(() => import("react-icons/ri").then(m => ({ default: m.RiReactjsLine })));
+const RiTailwindCssFill = lazyWithPreload(() => import("react-icons/ri").then(m => ({ default: m.RiTailwindCssFill })));
+const SiReactrouter = lazyWithPreload(() => import("react-icons/si").then(m => ({ default: m.SiReactrouter })));
+const RiNextjsLine = lazyWithPreload(() => import("react-icons/ri").then(m => ({ default: m.RiNextjsLine })));
+const SiRedux = lazyWithPreload(() => import("react-icons/si").then(m => ({ default: m.SiRedux })));
+const SiAxios = lazyWithPreload(() => import("react-icons/si").then(m => ({ default: m.SiAxios })));
+const SiMui = lazyWithPreload(() => import("react-icons/si").then(m => ({ default: m.SiMui })));
+const SiFramer = lazyWithPreload(() => import("react-icons/si").then(m => ({ default: m.SiFramer })));
+const BsBootstrap = lazyWithPreload(() => import("react-icons/bs").then(m => ({ default: m.BsBootstrap })));
+const DiJava = lazyWithPreload(() => import("react-icons/di").then(m => ({ default: m.DiJava })));
+const SiSpringboot = lazyWithPreload(() => import("react-icons/si").then(m => ({ default: m.SiSpringboot })));
+const DiMysql = lazyWithPreload(() => import("react-icons/di").then(m => ({ default: m.DiMysql })));
+const DiPhp = lazyWithPreload(() => import("react-icons/di").then(m => ({ default: m.DiPhp })));
+const GrGithub = lazyWithPreload(() => import("react-icons/gr").then(m => ({ default: m.GrGithub })));
+const DiBitbucket = lazyWithPreload(() => import("react-icons/di").then(m => ({ default: m.DiBitbucket })));
+const SiPostman = lazyWithPreload(() => import("react-icons/si").then(m => ({ default: m.SiPostman })));
+const DiDocker = lazyWithPreload(() => import("react-icons/di").then(m => ({ default: m.DiDocker })));
+const SiInsomnia = lazyWithPreload(() => import("react-icons/si").then(m => ({ default: m.SiInsomnia })));
+const SiNgrok = lazyWithPreload(() => import("react-icons/si").then(m => ({ default: m.SiNgrok })));
+const DiJenkins = lazyWithPreload(() => import("react-icons/di").then(m => ({ default: m.DiJenkins })));
+const SiCheckmk = lazyWithPreload(() => import("react-icons/si").then(m => ({ default: m.SiCheckmk })));
+const SiMatomo = lazyWithPreload(() => import("react-icons/si").then(m => ({ default: m.SiMatomo })));
+const SiJira = lazyWithPreload(() => import("react-icons/si").then(m => ({ default: m.SiJira })));
+const RiWebhookFill = lazyWithPreload(() => import("react-icons/ri").then(m => ({ default: m.RiWebhookFill })));
+const FcLinux = lazyWithPreload(() => import("react-icons/fc").then(m => ({ default: m.FcLinux })));
 
 const floatingVariants = (duration) => ({
   initial: { y: -10, opacity: 0 },
@@ -41,10 +42,22 @@ const floatingVariants = (duration) => ({
       ease: "easeInOut",
     },
   },
-  
 });
 
 export default function Technologies() {
+
+  // ✅ Preload all icons in background after first paint
+  useEffect(() => {
+    requestIdleCallback(() => {
+      [
+        RiReactjsLine, RiTailwindCssFill, SiReactrouter, RiNextjsLine, SiRedux,
+        SiAxios, SiMui, SiFramer, BsBootstrap, DiJava, SiSpringboot, DiMysql,
+        DiPhp, GrGithub, DiBitbucket, SiPostman, DiDocker, SiInsomnia, SiNgrok,
+        DiJenkins, SiCheckmk, SiMatomo, SiJira, RiWebhookFill, FcLinux
+      ].forEach(icon => icon.preload());
+    });
+  }, []);
+
   const icons = [
     [RiReactjsLine, 2, "text-[#00a7e5]"],
     [RiTailwindCssFill, 2.5, "text-[#06B6D4]"],
@@ -88,9 +101,10 @@ export default function Technologies() {
       </motion.h2>
 
       <div className="flex flex-wrap lg:flex-row items-center justify-center gap-4">
-        {icons.map(([Icon, duration, color], i) => (
-          <Suspense key={i} fallback={<div className="p-4 w-29 h-29 bg-stone-900 rounded-full animate-pulse"></div>}>
+        <Suspense fallback={null}>
+          {icons.map(([Icon, duration, color], i) => (
             <motion.div
+              key={i}
               className="p-4"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -101,8 +115,8 @@ export default function Technologies() {
             >
               <Icon className={`text-7xl h-29 w-29 ${color}`} />
             </motion.div>
-          </Suspense>
-        ))}
+          ))}
+        </Suspense>
       </div>
     </div>
   );
