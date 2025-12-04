@@ -5,10 +5,4 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  build: {
-    target: "esnext",
-    cssCodeSplit: true,
-    sourcemap: false,
-    minify: "esbuild",
-  },
 });
