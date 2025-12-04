@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { EXPERIENCES } from "../constants";
 import { motion } from "framer-motion";
 
@@ -12,9 +12,18 @@ const textVariants = {
 };
 
 export default function Experience() {
+
+    useEffect(() => {
+        if ("requestIdleCallback" in window) {
+            requestIdleCallback(() => {
+                EXPERIENCES.forEach(() => { });
+            });
+        }
+    }, []);
+
     return (
         <div className="pb-24 px-4 sm:px-6 lg:px-8">
-            {/* Heading lazy load */}
+
             <motion.h2
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: -100 }}
@@ -42,7 +51,6 @@ export default function Experience() {
                             variants={textVariants}
                             className="w-full max-w-xl mx-auto px-4 sm:px-0 md:flex-col items-center justify-center lg:px-0 lg:w-aut"
                         >
-                            {/* Role & Company */}
                             <motion.div
                                 className="mb-3 text-center sm:text-center"
                                 initial={{ opacity: 0, y: 20 }}
@@ -56,7 +64,6 @@ export default function Experience() {
                                 <p className="text-sm text-stone-500">{exp.year}</p>
                             </motion.div>
 
-                            {/* Description */}
                             <motion.p
                                 className="text-sm my-2 w-auto py-6 md:text-2xl text-justify leading-relaxed tracking-tighter"
                                 initial={{ opacity: 0 }}
@@ -66,7 +73,6 @@ export default function Experience() {
                                 {exp.description}
                             </motion.p>
 
-                            {/* Technologies */}
                             <motion.div
                                 className="flex flex-wrap justify-center items-center lg:justify-center gap-2"
                                 initial={{ opacity: 0 }}
