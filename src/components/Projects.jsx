@@ -1,8 +1,8 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
 
-// Text animation variants
+// ✅ Text animation variants (UNCHANGED)
 const textVariants = {
   hidden: { opacity: 0, x: 100 },
   visible: {
@@ -13,9 +13,23 @@ const textVariants = {
 };
 
 export default function Projects() {
+
+  // ✅ Preload all project images in idle time (non-blocking)
+  useEffect(() => {
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(() => {
+        PROJECTS.forEach((project) => {
+          const img = new Image();
+          img.src = project.image;
+        });
+      });
+    }
+  }, []);
+
   return (
     <div className="pb-24 px-4 sm:px-6 lg:px-8">
-      {/* Lazy load the heading */}
+
+      {/* ✅ Heading (UNCHANGED) */}
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
@@ -27,131 +41,137 @@ export default function Projects() {
       </motion.h2>
 
       <div className="w-full max-w-4xl mx-auto">
-        {PROJECTS.map((project, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8, delay: i * 0.1 }}
-            className="mb-12 flex flex-col lg:flex-row flex-wrap justify-center lg:justify-start"
-          >
-            {/* Image lazy load */}
-            <motion.div
-              className="flex flex-col flex-wrap justify-center items-center w-full lg:w-1/3"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.5 }}
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                loading="lazy"
-                className="sm:w-[450px] sm:h-[350px] md:h-[450px] md:w-[550px] lg:h-[150px] object-fill mb-6 rounded"
-              />
-            </motion.div>
 
-            {/* Texts and buttons lazy load */}
+        {/* ✅ Single Suspense boundary for full list */}
+        <Suspense fallback={null}>
+          {PROJECTS.map((project, i) => (
             <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-20%" }}
-              variants={textVariants}
-              className="w-full max-w-xl mx-auto px-4 sm:px-0 md:flex-col items-center justify-center lg:px-0 lg:w-auto lg:ml-3"
+              key={i}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, delay: i * 0.1 }}
+              className="mb-12 flex flex-col lg:flex-row flex-wrap justify-center lg:justify-start"
             >
-              <div className="space-y-1">
-                <motion.h3
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="mb-2 font-semibold text-xl sm:text-2xl text-center sm:text-center lg:text-start"
-                >
-                  {project.title}
-                </motion.h3>
+              {/* ✅ Image block (UNCHANGED visually, optimized internally) */}
+              <motion.div
+                className="flex flex-col flex-wrap justify-center items-center w-full lg:w-1/3"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.5 }}
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                  className="sm:w-[450px] sm:h-[350px] md:h-[450px] md:w-[550px] lg:h-[150px] object-fill mb-6 rounded"
+                />
+              </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                  className="space-x-2 mb-2 flex justify-center lg:justify-start"
-                >
-                  {/* GitHub Button */}
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+              {/* ✅ Text + Buttons Block */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-20%" }}
+                variants={textVariants}
+                className="w-full max-w-xl mx-auto px-4 sm:px-0 md:flex-col items-center justify-center lg:px-0 lg:w-auto lg:ml-3"
+              >
+                <div className="space-y-1">
+                  <motion.h3
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="mb-2 font-semibold text-xl sm:text-2xl text-center sm:text-center lg:text-start"
                   >
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="rounded bg-slate-700 px-3 py-1 text-sm font-medium text-stone-300 cursor-pointer hover:bg-stone-500/45 hover:text-white hover:border-b-2 border-primary transition-all"
-                    >
-                      GitHub
-                    </motion.button>
-                  </a>
+                    {project.title}
+                  </motion.h3>
 
-                  {/* Live Demo Button */}
-                  {project.livedemolink ? (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="space-x-2 mb-2 flex justify-center lg:justify-start"
+                  >
+                    {/* GitHub */}
                     <a
-                      href={project.livedemolink}
+                      href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="rounded bg-blue-950 px-3 py-1 text-sm font-medium text-stone-300 cursor-pointer hover:bg-blue-500/45 hover:text-white hover:border-b-2 border-secondary transition-all"
+                        className="rounded bg-slate-700 px-3 py-1 text-sm font-medium text-stone-300 cursor-pointer hover:bg-stone-500/45 hover:text-white hover:border-b-2 border-primary transition-all"
                       >
-                        Live Demo
+                        GitHub
                       </motion.button>
                     </a>
-                  ) : (
-                    <span className="rounded bg-slate-800 px-3 py-1 text-sm font-medium text-stone-300 cursor-not-allowed opacity-50">
-                      Live Demo
-                    </span>
-                  )}
-                </motion.div>
-              </div>
 
-              <motion.p
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="mb-4 text-stone-400 text-justify lg:text-start xs:tracking-tighter"
-              >
-                {project.description}
-              </motion.p>
-
-              {/* Tech badges */}
-              <motion.div
-                className="flex flex-wrap justify-center lg:justify-start gap-3"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                {project.technologies.map((tech, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: i * 0.05 }}
-                    className="flex items-center gap-2 rounded-sm bg-stone-900/80 px-3 py-1.5 text-sm font-medium text-stone-200 shadow-sm hover:bg-stone-800 transition cursor-default"
-                  >
-                    {project.techlogo[i] && (
-                      <div className="flex items-center justify-center w-5 h-5">
-                        {React.createElement(project.techlogo[i], {
-                          className: "w-5 h-5",
-                        })}
-                      </div>
+                    {/* Live Demo */}
+                    {project.livedemolink ? (
+                      <a
+                        href={project.livedemolink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="rounded bg-blue-950 px-3 py-1 text-sm font-medium text-stone-300 cursor-pointer hover:bg-blue-500/45 hover:text-white hover:border-b-2 border-secondary transition-all"
+                        >
+                          Live Demo
+                        </motion.button>
+                      </a>
+                    ) : (
+                      <span className="rounded bg-slate-800 px-3 py-1 text-sm font-medium text-stone-300 cursor-not-allowed opacity-50">
+                        Live Demo
+                      </span>
                     )}
-                    <span className="whitespace-nowrap">{tech}</span>
                   </motion.div>
-                ))}
+                </div>
+
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="mb-4 text-stone-400 text-justify lg:text-start xs:tracking-tighter"
+                >
+                  {project.description}
+                </motion.p>
+
+                {/* ✅ Tech Badges */}
+                <motion.div
+                  className="flex flex-wrap justify-center lg:justify-start gap-3"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  {project.technologies.map((tech, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4, delay: i * 0.05 }}
+                      className="flex items-center gap-2 rounded-sm bg-stone-900/80 px-3 py-1.5 text-sm font-medium text-stone-200 shadow-sm hover:bg-stone-800 transition cursor-default"
+                    >
+                      {project.techlogo[i] && (
+                        <div className="flex items-center justify-center w-5 h-5">
+                          {React.createElement(project.techlogo[i], {
+                            className: "w-5 h-5",
+                          })}
+                        </div>
+                      )}
+                      <span className="whitespace-nowrap">{tech}</span>
+                    </motion.div>
+                  ))}
+                </motion.div>
               </motion.div>
             </motion.div>
-          </motion.div>
-        ))}
+          ))}
+        </Suspense>
       </div>
     </div>
   );
