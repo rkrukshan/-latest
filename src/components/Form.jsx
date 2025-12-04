@@ -13,13 +13,19 @@ const textVariants = {
 const Form = () => {
   const [result, setResult] = useState("");
 
+  const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+  const SUBJECT = import.meta.env.VITE_WEB3FORMS_SUBJECT;
+
+  console.log("ACCESS_KEY:", ACCESS_KEY);
+  console.log("SUBJECT:", SUBJECT);
+
   const onSubmit = useCallback(async (event) => {
     event.preventDefault();
     setResult("Sending...");
 
     const formData = new FormData(event.target);
-    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
-    formData.append("subject", import.meta.env.VITE_WEB3FORMS_SUBJECT);
+    formData.append("access_key", ACCESS_KEY);
+    formData.append("subject", SUBJECT);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -37,12 +43,12 @@ const Form = () => {
       }
     } catch (error) {
       setResult("Network Error. Try again later.");
+      console.error("Form submission error:", error);
     }
-  }, []);
+  }, [ACCESS_KEY, SUBJECT]);
 
   return (
     <div className="pb-24 px-4 sm:px-6 lg:px-8">
-
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
@@ -59,9 +65,7 @@ const Form = () => {
         variants={textVariants}
         className="w-full max-w-3xl mx-auto bg-stone-900/60 p-8 rounded-2xl shadow-lg backdrop-blur-sm"
       >
-
         <form onSubmit={onSubmit} className="space-y-6">
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +73,11 @@ const Form = () => {
             transition={{ duration: 0.6 }}
           >
             <label className="block text-stone-300 text-sm font-medium mb-2">Name</label>
-            <input required name="name" className="w-full rounded-md bg-stone-800/60 border border-stone-700 px-4 py-2" />
+            <input
+              required
+              name="name"
+              className="w-full rounded-md bg-stone-800/60 border border-stone-700 px-4 py-2"
+            />
           </motion.div>
 
           <motion.div
@@ -79,7 +87,12 @@ const Form = () => {
             transition={{ duration: 0.6 }}
           >
             <label className="block text-stone-300 text-sm font-medium mb-2">Email</label>
-            <input type="email" required name="email" className="w-full rounded-md bg-stone-800/60 border border-stone-700 px-4 py-2" />
+            <input
+              type="email"
+              required
+              name="email"
+              className="w-full rounded-md bg-stone-800/60 border border-stone-700 px-4 py-2"
+            />
           </motion.div>
 
           <motion.div
@@ -89,11 +102,19 @@ const Form = () => {
             transition={{ duration: 0.6 }}
           >
             <label className="block text-stone-300 text-sm font-medium mb-2">Message</label>
-            <textarea required name="message" rows="5" className="w-full rounded-md bg-stone-800/60 border border-stone-700 px-4 py-2"></textarea>
+            <textarea
+              required
+              name="message"
+              rows="5"
+              className="w-full rounded-md bg-stone-800/60 border border-stone-700 px-4 py-2"
+            ></textarea>
           </motion.div>
 
           <div className="flex justify-center">
-            <button type="submit" className="rounded bg-stone-800/45 px-6 py-2 text-stone-200 hover:bg-blue-950/45">
+            <button
+              type="submit"
+              className="rounded bg-stone-800/45 px-6 py-2 text-stone-200 hover:bg-blue-950/45"
+            >
               Submit Form
             </button>
           </div>
@@ -108,7 +129,6 @@ const Form = () => {
             {result}
           </motion.p>
         )}
-
       </motion.div>
     </div>
   );
