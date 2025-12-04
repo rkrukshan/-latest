@@ -1,8 +1,10 @@
 import React, { Suspense, useEffect } from "react";
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";      // GitHub logo
+import { FiExternalLink } from "react-icons/fi"; // Live Demo logo
 
-// ✅ Text animation variants (UNCHANGED)
+// Text animation variants
 const textVariants = {
   hidden: { opacity: 0, x: 100 },
   visible: {
@@ -13,8 +15,7 @@ const textVariants = {
 };
 
 export default function Projects() {
-
-  // ✅ Preload all project images in idle time (non-blocking)
+  // Preload all project images in idle time
   useEffect(() => {
     if ("requestIdleCallback" in window) {
       requestIdleCallback(() => {
@@ -28,8 +29,7 @@ export default function Projects() {
 
   return (
     <div className="pb-24 px-4 sm:px-6 lg:px-8">
-
-      {/* ✅ Heading (UNCHANGED) */}
+      {/* Heading */}
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
@@ -41,8 +41,6 @@ export default function Projects() {
       </motion.h2>
 
       <div className="w-full max-w-4xl mx-auto">
-
-        {/* ✅ Single Suspense boundary for full list */}
         <Suspense fallback={null}>
           {PROJECTS.map((project, i) => (
             <motion.div
@@ -53,7 +51,7 @@ export default function Projects() {
               transition={{ duration: 0.8, delay: i * 0.1 }}
               className="mb-12 flex flex-col lg:flex-row flex-wrap justify-center lg:justify-start"
             >
-              {/* ✅ Image block (UNCHANGED visually, optimized internally) */}
+              {/* Image block */}
               <motion.div
                 className="flex flex-col flex-wrap justify-center items-center w-full lg:w-1/3"
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -71,7 +69,7 @@ export default function Projects() {
                 />
               </motion.div>
 
-              {/* ✅ Text + Buttons Block */}
+              {/* Text + Buttons Block */}
               <motion.div
                 initial="hidden"
                 whileInView="visible"
@@ -89,11 +87,12 @@ export default function Projects() {
                     {project.title}
                   </motion.h3>
 
+                  {/* Buttons with Icon + Text */}
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="space-x-2 mb-2 flex justify-center lg:justify-start"
+                    className="space-x-3 mb-2 flex justify-center lg:justify-start"
                   >
                     {/* GitHub */}
                     <a
@@ -104,8 +103,9 @@ export default function Projects() {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="rounded bg-slate-700 px-3 py-1 text-sm font-medium text-stone-300 cursor-pointer hover:bg-stone-500/45 hover:text-white hover:border-b-2 border-primary transition-all"
+                        className="flex items-center gap-2 rounded bg-slate-700 px-3 py-1 text-sm font-medium text-stone-300 cursor-pointer hover:bg-stone-500/45 hover:text-white hover:border-b-2 border-primary transition-all"
                       >
+                        <FaGithub className="w-4 h-4" />
                         GitHub
                       </motion.button>
                     </a>
@@ -120,19 +120,22 @@ export default function Projects() {
                         <motion.button
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="rounded bg-blue-950 px-3 py-1 text-sm font-medium text-stone-300 cursor-pointer hover:bg-blue-500/45 hover:text-white hover:border-b-2 border-secondary transition-all"
+                          className="flex items-center gap-2 rounded bg-blue-950 px-3 py-1 text-sm font-medium text-stone-300 cursor-pointer hover:bg-blue-500/45 hover:text-white hover:border-b-2 border-secondary transition-all"
                         >
+                          <FiExternalLink className="w-4 h-4" />
                           Live Demo
                         </motion.button>
                       </a>
                     ) : (
-                      <span className="rounded bg-slate-800 px-3 py-1 text-sm font-medium text-stone-300 cursor-not-allowed opacity-50">
+                      <span className="flex items-center gap-2 rounded bg-slate-800 px-3 py-1 text-sm font-medium text-stone-300 cursor-not-allowed opacity-50">
+                        <FiExternalLink className="w-4 h-4" />
                         Live Demo
                       </span>
                     )}
                   </motion.div>
                 </div>
 
+                {/* Description */}
                 <motion.p
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -142,7 +145,7 @@ export default function Projects() {
                   {project.description}
                 </motion.p>
 
-                {/* ✅ Tech Badges */}
+                {/* Tech Badges */}
                 <motion.div
                   className="flex flex-wrap justify-center lg:justify-start gap-3"
                   initial={{ opacity: 0 }}
