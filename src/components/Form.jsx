@@ -390,7 +390,7 @@ const Form = () => {
             <button
               type="submit"
               disabled={isSubmitting || !isFormValid()}
-              className={`group relative rounded-lg bg-gradient-to-r ${isFormValid() ? 'from-blue-950 to-cyan-950 hover:from-blue-900 hover:to-cyan-900' : 'from-stone-800 to-stone-900 cursor-not-allowed'} px-8 py-3 text-white font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100`}
+              className={`group relative rounded-lg bg-gradient-to-r ${isFormValid() ? 'from-blue-950 to-cyan-950 hover:from-blue-900 hover:to-cyan-900' : 'from-stone-800 to-stone-900 cursor-not-allowed'} px-8 py-3 text-white font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 hover:pointer-cursor`}
             >
               <span className="flex items-center justify-center gap-2">
                 {isSubmitting ? (
