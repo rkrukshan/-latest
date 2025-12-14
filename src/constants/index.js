@@ -45,7 +45,9 @@ import {
   SiPostman,
   SiReactrouter,
   SiRedux,
+  SiSentry,
   SiSpringboot,
+  SiStrapi,
   SiTailwindcss,
   SiThymeleaf,
 } from "react-icons/si";
@@ -93,6 +95,8 @@ export const EXPERIENCES = [
   //     SiTailwindcss, // Tailwind CSS
   //     SiGit, // Git
   //     DiBitbucket, // Bitbucket
+  //     SiStrapi, // Strapi
+  //     SiSentry, // Sentry
   //   ],
 
   //   // techcolor: [

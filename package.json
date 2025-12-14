@@ -20,6 +20,7 @@
     "react-lazy-load-image-component": "^1.6.3",
     "react-lazy-with-preload": "^2.2.1",
     "react-router-dom": "^7.6.2",
+    "react-tooltip": "^5.30.0",
     "sitemap": "^9.0.0",
     "tailwindcss": "^4.1.10"
   },
