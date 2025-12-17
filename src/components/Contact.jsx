@@ -94,7 +94,7 @@ export default function Contact() {
             variants={textVariants1}
             className="my-4"
           >
-            © {new Date().getFullYear()} 
+            © {new Date().getFullYear()}
             {CONTACT.copywrite}
           </LazyText>
         </Suspense>
