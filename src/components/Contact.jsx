@@ -85,6 +85,20 @@ export default function Contact() {
           </LazyText>
         </Suspense>
 
+        {/* Copywrite */}
+        <Suspense fallback={<p className="opacity-0 my-4">...</p>}>
+          <LazyText
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "20%" }}
+            variants={textVariants1}
+            className="my-4"
+          >
+            © {new Date().getFullYear()} 
+            {CONTACT.copywrite}
+          </LazyText>
+        </Suspense>
+
       </div>
     </div>
   );
