@@ -1,27 +1,132 @@
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense, useEffect, useState, lazy } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import lazyWithPreload from "react-lazy-with-preload";
 
-const Technologies = lazyWithPreload(() => import("./components/Technologies"));
-const Projects = lazyWithPreload(() => import("./components/Projects"));
-const Experience = lazyWithPreload(() => import("./components/Experience"));
-const Form = lazyWithPreload(() => import("./components/Form"));
-const Contact = lazyWithPreload(() => import("./components/Contact"));
+// Native React lazy loading (Netlify safe)
+const Technologies = lazy(() => import("./components/Technologies"));
+const Projects = lazy(() => import("./components/Projects"));
+const Experience = lazy(() => import("./components/Experience"));
+const Form = lazy(() => import("./components/Form"));
+const Contact = lazy(() => import("./components/Contact"));
 
 export default function App() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisibility = () => {
+    setIsVisible(window.pageYOffset > 300);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   useEffect(() => {
-    Technologies.preload();
-    Projects.preload();
-    Experience.preload();
-    Form.preload();
-    Contact.preload();
+    // Safe preload for lazy components
+    import("./components/Technologies");
+    import("./components/Projects");
+    import("./components/Experience");
+    import("./components/Form");
+    import("./components/Contact");
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   return (
     <div className="overflow-x-hidden text-stone-300 antialiased">
+      {/* Custom CSS animations */}
+      <style>
+        {`
+          @keyframes slow-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes float-glow {
+  0%, 100% { opacity: 0.8; transform: translateY(0) scale(1); }
+  50% { opacity: 1; transform: translateY(-4px) scale(1.08); }
+}
+@keyframes subtle-glow {
+  0%, 100% { opacity: 0.6; box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); }
+  50% { opacity: 0.9; box-shadow: 0 0 30px rgba(255, 255, 255, 0.7); }
+}
+.animate-slow-spin {
+  animation: slow-spin linear infinite;
+}
+.animate-float-glow {
+  animation: float-glow 3s ease-in-out infinite;
+}
+.animate-subtle-glow {
+  animation: subtle-glow 3s ease-in-out infinite;
+}
+        `}
+      </style>
 
+      {/* Scroll to Top Button */}
+      {isVisible && (
+        <button
+          onClick={scrollToTop}
+          className="group fixed bottom-8 right-8 z-50 h-16 w-16 transition-all duration-500 hover:scale-110 cursor-pointer"
+          aria-label="Scroll to top"
+        >
+          {/* Outer rotating ring - NO CHANGE ON HOVER */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-gray-500 via-gray-950 to-slate-500 p-[2px] opacity-80 blur-sm animate-slow-spin">
+            <div className="h-full w-full rounded-full bg-gradient-to-br from-gray-950 via-gray-700 to-black"></div>
+          </div>
+
+          {/* Middle pulsing ring - NO CHANGE ON HOVER */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-gray-900/30 via-gray-900/0 to-gray-900/0 blur-[2px] animate-slow-pulse"></div>
+
+          {/* Core button - REDUCE INNER GLOW ON HOVER */}
+          <div className="relative flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br from-gray-800 via-gray-900 to-black shadow-2xl transition-all duration-700 group-hover:rotate-180 animate-subtle-glow">
+            {/* Inner accent glow - REDUCES ON HOVER */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-gray-700/90 via-gray-600/60 to-gray-700/50 blur-[15px] transition-all duration-300 group-hover:opacity-40 group-hover:blur-[10px]"></div>
+
+            {/* Arrow icon with float animation */}
+            <div className="relative z-10 animate-float-glow">
+              <svg
+                className="h-7 w-7 transition-all duration-500 group-hover:scale-125 group-hover:rotate-180"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <defs>
+                  <linearGradient id="arrow-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#e5e7eb" />
+                    <stop offset="50%" stopColor="#d1d5db" />
+                    <stop offset="100%" stopColor="#9ca3af" />
+                  </linearGradient>
+                </defs>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.8}
+                  d="M5 15l7-7 7 7"
+                  stroke="url(#arrow-gradient)"
+                />
+              </svg>
+            </div>
+
+            {/* Subtle inner ring - SLIGHTLY BRIGHTER ON HOVER (contrast effect) */}
+            <div className="absolute inset-0 rounded-full border border-gray-900/40 transition-all duration-300 group-hover:border-slate-950/50"></div>
+
+            {/* Top highlight - REDUCES ON HOVER (part of inner glow) */}
+            <div className="absolute top-0 left-1/2 h-2 w-6 -translate-x-1/2 rounded-full bg-gradient-to-r from-white/30 via-white/40 to-slate-950/50 blur-sm transition-all duration-300 group-hover:opacity-30"></div>
+          </div>
+
+          {/* Outer hover glow - NO CHANGE ON HOVER (already visible only on hover) */}
+          <div className="absolute -inset-3 overflow-hidden rounded-full">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-gray-300/30 via-gray-900/40 to-gray-300/30 opacity-0 blur-lg transition-all duration-700 group-hover:opacity-100 group-hover:blur-xl"></div>
+          </div>
+
+          {/* Additional static outer glow - NO CHANGE ON HOVER */}
+          <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-gray-400/10 via-gray-300/15 to-gray-400/10 opacity-60 blur-md"></div>
+        </button>
+      )}
+
+      {/* Background */}
       <div className="fixed inset-0 -z-10">
         <div className="relative h-full w-full bg-black">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
@@ -29,11 +134,12 @@ export default function App() {
         </div>
       </div>
 
-      <div className="container px-8 mx-auto">
+      {/* Content */}
+      <div className="container mx-auto px-8">
         <Navbar />
         <Hero />
 
-        <Suspense fallback={<div className="text-white text-center mt-20">Loading...</div>}>
+        <Suspense fallback={<div className="mt-20 text-center text-white">Loading...</div>}>
           <Technologies />
           <Projects />
           <Experience />
