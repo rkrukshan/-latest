@@ -284,5 +284,5 @@ export const CONTACT = {
   address: "186/2 sir pon, Ramanathan Road, Thirunelveli, Jaffna, Sri Lanka.",
   phoneNo: "+94 769861092 ",
   email: "rukshan1122@gmail.com",
-  copywrite: " ",
+  copywrite: " rukmanghan.netlify.app. All rights reserved.",
 };
