@@ -102,7 +102,7 @@ export default function Projects() {
                     >
                       <motion.button
                         whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                        whileTap={{ scale: 0.90 }}
                         className="flex items-center gap-2 rounded bg-slate-700 px-3 py-1 text-sm font-medium text-stone-300 cursor-pointer hover:bg-stone-500/45 hover:text-white hover:border-b-2 border-primary transition-all"
                       >
                         <FaGithub className="w-4 h-4" />
@@ -119,7 +119,7 @@ export default function Projects() {
                       >
                         <motion.button
                           whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
+                          whileTap={{ scale: 0.90 }}
                           className="flex items-center gap-2 rounded bg-blue-950 px-3 py-1 text-sm font-medium text-stone-300 cursor-pointer hover:bg-blue-500/45 hover:text-white hover:border-b-2 border-secondary transition-all"
                         >
                           <FiExternalLink className="w-4 h-4" />
