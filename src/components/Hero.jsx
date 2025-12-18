@@ -33,7 +33,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="pb-4 container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="pb-4 mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-wrap lg:flex-row-reverse">
 
         {/* Profile Image */}

@@ -152,7 +152,7 @@ export default function App() {
       </div>
 
       {/* Content - Responsive container */}
-      <div className="container mx-auto px-4 sm:px-6 md:px-8">
+      <div className=" mx-auto px-4 sm:px-6 md:px-8">
         <Navbar />
         <Hero />
 
